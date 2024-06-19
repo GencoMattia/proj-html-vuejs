@@ -1,8 +1,11 @@
 <script>
+import image from '../assets/'
 export default {
     data() {
         return {
-        
+            studyPlanes:{
+                img:
+            }
         };
     }
 };
