@@ -3,6 +3,8 @@
 </script>
 
 <template>
+  <AppHeader/>
+  
   <main>
     
   </main>
