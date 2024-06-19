@@ -37,13 +37,34 @@ export default {
 </script>
 
 <template>
-    <div class="my-container"> 
-        <article v-for="(logo, index) in clientsCards" :key="index">
+    <div class="my-container row"> 
+        <article class="col-2" 
+        v-for="(logo, index) in clientsCards" :key="index">
             <img :src="getImagePath(logo.icon)" alt="client-logo">
         </article>
     </div>
 </template>
 
 <style scoped lang="scss">
+    div {
+        flex-wrap: nowrap;
+        overflow: hidden;
 
+        article {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                opacity: .5;
+                transition: opacity .3s ease;
+            }
+
+            &:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 </style>
