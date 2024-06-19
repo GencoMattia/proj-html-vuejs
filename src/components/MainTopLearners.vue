@@ -38,7 +38,16 @@ export default {
 </script>
 
 <template>
+    <section class="testimonials">
+        <article class="testimonal-card">
+            <div class="card-content">
 
+            </div>
+            <div class="card-profile">
+                
+            </div>
+        </article>
+    </section>
 </template>
 
 <style scoped>
