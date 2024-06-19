@@ -33,12 +33,18 @@ export default {
                 },
             ]
         };
+    },
+
+    methods: {
+        getImagePath: function(img) {
+            return new URL(`../assets/img/${img}`, import.meta.url).href;
+        }
     }
 };
 </script>
 
 <template>
-    <section class="testimonials row flex-nowrap overflow-hidden">
+    <section class="testimonials row flex-nowrap overflow-hidden align-items-stretch">
         <article v-for="(card, index) in learnersList" :key="index" class="testimonal-card col-4">
             <div class="card-content">
                 <h2>
@@ -49,7 +55,12 @@ export default {
                 </p>
             </div>
             <div class="card-profile">
-
+                <figure class="testimonial-picture">
+                    <img :src="getImagePath(card.avatar)" :alt="`{{ card.name }}-img`">
+                </figure>
+                <div class="testimonial-occupation">
+                    / {{ card.occupation }}
+                </div>
             </div>
         </article>
     </section>
