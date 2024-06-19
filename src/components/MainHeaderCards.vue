@@ -33,11 +33,11 @@ export default {
 <template>
     <div class="my-container"> 
         <article>
-
+            <img src="" alt="">
         </article>
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
