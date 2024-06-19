@@ -38,13 +38,18 @@ export default {
 </script>
 
 <template>
-    <section class="testimonials">
-        <article class="testimonal-card">
+    <section class="testimonials row flex-nowrap overflow-hidden">
+        <article v-for="(card, index) in learnersList" :key="index" class="testimonal-card col-4">
             <div class="card-content">
-
+                <h2>
+                    {{ card.title }}
+                </h2>
+                <p>
+                    {{ card.text }}
+                </p>
             </div>
             <div class="card-profile">
-                
+
             </div>
         </article>
     </section>
