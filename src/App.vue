@@ -3,7 +3,11 @@
 </script>
 
 <template>
-    <AppHeader/>
+  <AppHeader/>
+  
+  <main>
+    
+  </main>
 </template>
 
 <style>
