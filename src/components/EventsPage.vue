@@ -44,14 +44,14 @@ export default {
                         home  /  event
                     </p>
                 </div>
-                <div class="page-title">
+                <div class="page-title text-center">
                     <h1>
                         Events
                     </h1>
                 </div>
-                <div class="events-filter">
+                <div class="events-filter d-flex justify-content-between">
                     <p class="available-events">
-
+                        We found {{ eventsList.length }} events available for you
                     </p>
                     <select name="event-type" id="event-type">
                         Event Type
@@ -60,7 +60,7 @@ export default {
                 <div class="events-cards-wrapper">
                     <div class="card" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
                         <img :src="event.image" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text event-date">
                                 {{ event.start_date }}
                             </p>
@@ -79,6 +79,8 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../styles/partials/mixins" as *;
+
     .events-cards-wrapper {
         display: flex;
         justify-content: space-between;
@@ -91,6 +93,16 @@ export default {
             text-align: center;
             display: flex;
 
+            .event-date {
+                color: #20ad96;
+                @include uppercase-text;
+                font-weight: bold;
+            }
+
+            .event-name {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
         }
     }
 
