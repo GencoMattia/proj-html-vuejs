@@ -211,8 +211,8 @@ export default {
             </div>
             <div class="li-links" v-for="(link,index) in linksNav" :key="index" @click="list=(index)">
                 <div class="dropdown">
-                    <a class="dropdown-toggle border-green" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>{{ link.name }}</span>
+                    <a class="dropdown-toggle border-green " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="hover-underline-animation" >{{ link.name }}</span>
                     </a>
                     <ul class="dropdown-menu my-width" :class="index===0 ? 'position'  : ''">
                         <li class="d-flex justify-content-between">
@@ -253,7 +253,7 @@ export default {
 
 <style scoped lang="scss">
 
-
+        // navbar
 article {
     box-shadow: 5px 2px 5px #b9b9b9;
     position: fixed;
@@ -272,24 +272,43 @@ article {
             }
 
         }
-            a.border-green {
-                text-decoration: none;
-                color: #3d3d3d;
-                font-weight: 300;
-
-                &:hover {
-                    color: #20ad96;
-                }
-
-                span {
-
-                    &:hover {
-                        color: #20ad96;
-                        border-bottom: 2px solid #20ad96;
-                        
-                    }
-                }
+            // hover
+        a.border-green {
+            color: #3d3d3d;
+            
+            &:hover {
+                color: #20ad96;
             }
+        }    
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #3d3d3d;
+            font-weight: 200;
+
+            &:hover {
+                color: #20ad96;
+                }
+        }
+
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #20ad96;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
         
 
     }
@@ -328,7 +347,7 @@ article {
     border: collapse;
     border: 1px solid white;
     border-radius: 0px;    
-    border-bottom: 5px solid #20ad96;
+    border-bottom: 4px solid #20ad96;
     padding: 0 !important;
     min-width: 11rem !important;
 }
