@@ -214,10 +214,10 @@ export default {
                     <a class="dropdown-toggle border-green" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>{{ link.name }}</span>
                     </a>
-                    <ul class="dropdown-menu my-width">
+                    <ul class="dropdown-menu my-width" :class="index===0 ? 'position'  : ''">
                         <li class="d-flex justify-content-between">
                             <section class="d-flex my-padding">
-                                <div class="links" :class="index===0 ? 'wide-panel' : ''">
+                                <div class="links" :class="index===0 ? 'wide-panel'  : ''">
                                     <li v-for="(link, index) in linksNav[list].dropdown" :key="index">
                                         <a href=""> 
                                             <span>
@@ -226,10 +226,10 @@ export default {
                                         </a>
                                     </li>
                                 </div>
-                                <div class="links-next" :class="index===0 ? 'wide-panel' : ''">
+                                <div class="links-next" :class="index===0 ? 'small-panel' : ''">
                                     <li v-for="(link, index) in linksNav[list].dropdownNext" :key="index"><a href=""> {{ link.name }}</a></li>
                                 </div>
-                                <div class="nav-img" :class="index===0 ? 'wide-panel' : ''">
+                                <div class="nav-img" :class="index===0 ? 'img-panel' : ''">
                                     <img :src="link.image" > 
                                 </div>
                             </section>
@@ -307,8 +307,21 @@ article {
     }
 }
 
+.position {
+    position: absolute !important;
+    left: -314px !important;
+}
+
+.img-panel {
+    width: 546px;
+}
+
 .wide-panel {
-    width: 350px;
+    width: 300px;
+}
+
+.small-panel {
+    width: 295px;
 }
 
 .dropdown-menu {
@@ -351,6 +364,8 @@ div.dropdown > a {
 }
 
                 // Input
+
+
 div.search {
 
                 // profile-icon
@@ -394,11 +409,12 @@ div.search {
         min-height: 48px;
         padding-right: 17.5px;
         padding-left: 17.5px;
-        background-color: white;
-        border: 1px solid white;
+        background-color: #f5f5f5;
+        border: 1px solid #f5f5f5;
         color: #20ad96;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        position: absolute;
         
         
 
