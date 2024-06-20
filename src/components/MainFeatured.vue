@@ -69,7 +69,7 @@ export default {
             </div>
             <div>
                 <div class="d-flex flex-wrap justify-content-between">
-                    <article class="d-flex mb-3" v-for="course in onlineCourses">
+                    <article class="d-flex mb-3 rounded-1" v-for="course in onlineCourses">
                         <img class="rounded-circle object-fit-cover me-4" :src="course.img" alt="">
                         <div class="align-content-center">
                             <p v-if="course.price === 'Free'">
@@ -105,6 +105,11 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
+section{
+    background-color: #f5f7fa;
+    padding: 5rem 0;
+}
+
 div.text-center>p{
     @include uppercase-text();
     color: #8c89a2;
@@ -127,6 +132,10 @@ article{
                     font-size: 20px;
                 }
         }
+}
+
+article:hover{
+    background-color: white;
 }
 
 img{
