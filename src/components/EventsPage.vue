@@ -1,12 +1,18 @@
 <script>
 import axios from 'axios';
+import { FontAwesomeIcon } from '../js/font-awesome';
 
 export default {
+    components: {
+        FontAwesomeIcon 
+    },
+    
     data() {
+
         return {
             eventsList: [
 
-            ]
+            ],
         };
     },
 
@@ -34,23 +40,36 @@ export default {
         <div class="my-container">
             <section class="main_events"> 
                 <div class="page-path">
-
+                    <p>
+                        home  /  event
+                    </p>
                 </div>
                 <div class="page-title">
-
+                    <h1>
+                        Events
+                    </h1>
                 </div>
                 <div class="events-filter">
+                    <p class="available-events">
 
+                    </p>
+                    <select name="event-type" id="event-type">
+                        Event Type
+                    </select>
                 </div>
-                <div v-for="(event, index) in eventsList" :key="index" class="events-cards-wrapper">
-                    <div class="card" style="width: 18rem;">
+                <div class="events-cards-wrapper">
+                    <div class="card" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
                         <img :src="event.image" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text event-date">
-                                
+                                {{ event.start_date }}
                             </p>
-                            <p class="card-text event-name">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p class="card-text event-location">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text event-name">
+                                {{ event.event_name }}
+                            </p>
+                            <p class="card-text event-location">
+                                <font-awesome-icon icon="location-dot" /> {{ event.location }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -60,5 +79,19 @@ export default {
 </template>
 
 <style scoped lang="scss">
+    .events-cards-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .card {
+            width: calc((100% / 3) - 3rem) !important;
+            margin-bottom: 2rem;
+            text-align: center;
+            display: flex;
+
+        }
+    }
 
 </style>
