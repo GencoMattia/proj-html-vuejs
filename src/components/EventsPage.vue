@@ -13,6 +13,10 @@ export default {
             eventsList: [
 
             ],
+
+            eventsTypeList: [
+
+            ],
         };
     },
 
@@ -21,11 +25,28 @@ export default {
             axios.get('http://152.89.170.170:3000/events/elearning')
             .then((response) => {
                 console.log(response.data);
-                this.eventsList = response.data;
+                const events = response.data;
+                const typeList = [
+                    "all",
+                ];
+
+                events.forEach(singleEvent => {
+                    if (singleEvent.type && !typeList.includes(singleEvent.type)) { 
+                        typeList.push(singleEvent.type);
+                    }
+                });
+
+                this.eventsList = events;
+                this.eventsTypeList = typeList;
             })
+
             .catch((error) => {
                 console.error("Error fetching events:", error);
             });
+        },
+
+        getEventsType() {
+
         }
     },
 
@@ -49,16 +70,20 @@ export default {
                         Events
                     </h1>
                 </div>
-                <div class="events-filter d-flex justify-content-between mb-4">
+                <div class="events-filter d-flex justify-content-between align-items-center mb-4">
                     <p class="available-events">
                         We found <span class="available-events-num">{{ eventsList.length }}</span> events available for you
                     </p>
-                    <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                    <div class="select-container d-flex align-items-center">
+                        <label for="event-type" class="form-label m-0">
+                            Event Type:
+                        </label>
+                        <select class="form-select form-select-lg border-0" aria-label="Large select example" id="event-type">
+                            <option v-for="(type, index) in eventsTypeList" :value="index">
+                                {{ type }}
+                            </option>
+                        </select>
+                    </div>
                 </div>
                 <div class="events-cards-wrapper">
                     <div class="card border-0" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
@@ -103,9 +128,30 @@ export default {
             }
         }
 
-        select {
+        .select-container {
             width: 15rem;
             font-size: 1rem;
+
+            &:hover {
+                box-shadow: 0 0 0 0.25rem rgba(39, 234, 11, 0.25);
+            }
+
+            select {
+                width: 65%;
+                font-size: 1rem;
+
+                option {
+
+                    &::selection {
+                        color: white;
+                        color: #20AD96 !important;
+                    }
+                }
+
+                &:focus {
+                    box-shadow: 0 0 0 0.25rem rgba(39, 234, 11, 0.25);
+                }
+            }
         }
     }
     
