@@ -51,6 +51,10 @@ export default {
     methods: {
         getImagePath: function(img) {
             return new URL(`../assets/img/${img}`, import.meta.url).href;
+        },
+
+        setActiveCircle(variable, index) {
+            variable = index;
         }
     },
 
@@ -96,6 +100,7 @@ export default {
             <font-awesome-icon 
                 v-for="(card, index) in learnersList" 
                 :key="index" 
+                @click="activeArticle = index"
                 icon="fa-solid fa-circle" 
                 :class="{ 'active-circle': learnersList.indexOf(card) === activeArticle }"
             />
