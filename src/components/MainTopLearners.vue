@@ -78,7 +78,8 @@ export default {
 
 <template>
     <section class="testimonials row overflow-hidden align-items-stretch justify-content-evenly">
-        <article v-for="(card, index) in visibleCards" :key="index" class="testimonal-card col-3 p-1 d-flex flex-column justify-content-between">
+        <article v-for="(card, index) in visibleCards" :key="index" @click=""
+        class="testimonal-card col-3 p-1 d-flex flex-column justify-content-between mb-4">
             <div class="card-content">
                 <h2>
                     {{ card.title }}
