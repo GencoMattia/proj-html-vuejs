@@ -17,6 +17,12 @@ export default {
             eventsTypeList: [
 
             ],
+
+            filteredEventsList: [
+
+            ],
+
+            selectedType: "all",
         };
     },
 
@@ -44,9 +50,15 @@ export default {
                 console.error("Error fetching events:", error);
             });
         },
+    },
 
-        getEventsType() {
-
+    computed: {
+        filteredEventsList() {
+            if (this.selectedType === 'all') {
+                return this.eventsList; 
+            } else {
+                return this.eventsList.filter(event => event.type === this.selectedType);
+            }
         }
     },
 
@@ -72,21 +84,21 @@ export default {
                 </div>
                 <div class="events-filter d-flex justify-content-between align-items-center mb-4">
                     <p class="available-events">
-                        We found <span class="available-events-num">{{ eventsList.length }}</span> events available for you
+                        We found <span class="available-events-num">{{ filteredEventsList.length }}</span> events available for you
                     </p>
                     <div class="select-container d-flex align-items-center">
                         <label for="event-type" class="form-label m-0">
                             Event Type:
                         </label>
-                        <select class="form-select form-select-lg border-0" aria-label="Large select example" id="event-type">
-                            <option v-for="(type, index) in eventsTypeList" :value="index">
+                        <select v-model="selectedType" @change="filterEventsByType" class="form-select form-select-lg border-0" aria-label="Large select example" id="event-type">
+                            <option v-for="(type, index) in eventsTypeList" :value="type">
                                 {{ type }}
                             </option>
                         </select>
                     </div>
                 </div>
                 <div class="events-cards-wrapper">
-                    <div class="card border-0" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
+                    <div class="card border-0" style="width: 18rem;" v-for="(event, index) in filteredEventsList" :key="index">
                         <div class="image-container">
                             <img :src="event.image" class="card-img-top" alt="...">
                             <div class="overlay">
