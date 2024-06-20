@@ -66,7 +66,7 @@ export default {
             <p>stimulated to learn?</p>
             <h2>Featured Online Courses</h2>
         </div>
-        <div>
+        <div id="article">
             <article v-for="course in onlineCourses">
                 <img :src="course.img" alt="">
                 <div>
@@ -79,12 +79,14 @@ export default {
                     <h3>
                         {{ course.title }}
                     </h3>
-                    <span>
-                        <font-awesome-icon icon="file-lines" /> {{ course.lessons }}
-                    </span>
-                    <span>
-                        <font-awesome-icon icon="user" /> {{ course.students }}
-                    </span>
+                    <div>
+                        <span>
+                            <font-awesome-icon icon="file-lines"/> {{ course.lessons }}
+                        </span>
+                        <span>
+                            <font-awesome-icon icon="user"/> {{ course.students }}
+                        </span>
+                    </div>
                 </div>
             </article>
         </div>
@@ -102,6 +104,18 @@ section>div>p{
     @include uppercase-text()
 }
 
+img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+div#article{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 
