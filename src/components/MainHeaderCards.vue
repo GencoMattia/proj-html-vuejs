@@ -32,8 +32,7 @@ export default {
                 }
             ],
 
-            currentCardIndex: 0,
-            visibleCardCount: 6,
+            scrollPosition: 0,
         };
     },
 
@@ -43,62 +42,45 @@ export default {
         },
 
         prevCard() {
-            const container = this.$refs.carouselContainer;
-
-            if (container.scrollLeft === 0) {
-                container.scrollLeft = (this.clonedCards.length - this.visibleCardCount) * container.offsetWidth / this.visibleCardCount; 
-            } else {
-                container.scrollLeft -= container.offsetWidth;
-            }
+            const cardWidth = this.$refs.carouselRow.querySelector('.col-2').offsetWidth;
+            this.scrollPosition = Math.max(0, this.scrollPosition - cardWidth);
+            this.$refs.carouselRow.scrollTo({ left: this.scrollPosition, behavior: 'smooth' });
         },
 
         nextCard() {
-            const container = this.$refs.carouselContainer;
-
-            if (container.scrollLeft >= (this.clonedCards.length - this.visibleCardCount) * container.offsetWidth / this.visibleCardCount) {
-                container.scrollLeft = 0;
-            } else {
-                container.scrollLeft += container.offsetWidth;
-            }
-        },
-
-        updateVisibleCardCount() {
-            const containerWidth = this.$refs.carouselContainer.offsetWidth;
-            const cardWidth = this.$refs.carouselContainer.querySelector('.col-2').offsetWidth;
-            this.visibleCardCount = Math.floor(containerWidth / cardWidth);
+            const cardWidth = this.$refs.carouselRow.querySelector('.col-2').offsetWidth;
+            const maxScroll = this.$refs.carouselRow.scrollWidth - this.$refs.carouselRow.offsetWidth;
+            this.scrollPosition = Math.min(maxScroll, this.scrollPosition + cardWidth);
+            this.$refs.carouselRow.scrollTo({ left: this.scrollPosition, behavior: 'smooth' });
         },
     },
 
     computed: {
-        clonedCards() {
-            const firstSix = this.clientsCards.slice(0, 6);
-            const lastSix = this.clientsCards.slice(-6);
-            return [...lastSix, ...this.clientsCards, ...firstSix];
-        },
+        
     },
 
     mounted() {
-        this.updateVisibleCardCount();
+        this.carouselRow = this.$refs.carouselRow;
     },
+
 };
 </script>
 
 <template>
     <div class="my-container row">
-        <div class="carosel-prev-button col-1">
+        <div class="carousel-prev-button col-1">
             <button class="prev-card" @click="prevCard">
                 <font-awesome-icon icon="chevron-left" />
             </button>
         </div>
-        <div class="carosel-container col-10" ref="carouselContainer">
-            <div class="carosel-row row">
-                <article class="col-2"
-                v-for="(logo, index) in clonedCards" :key="index">
+        <div class="carousel-container col-10">
+            <div class="carousel-row row" ref="carouselRow">
+                <article class="col-2" v-for="(logo, index) in clientsCards" :key="index">
                     <img :src="getImagePath(logo.icon)" alt="client-logo">
                 </article>
             </div>
         </div>
-        <div class="carosel-next-button col-1">
+        <div class="carousel-next-button col-1">
             <button class="next-card" @click="nextCard">
                 <font-awesome-icon icon="chevron-right" />
             </button>
@@ -109,48 +91,49 @@ export default {
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
 
-    .carosel-container {
+.carousel-row {
+    display: flex;
+    flex-wrap: nowrap;
     overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 
-    .carosel-row {
-        display: flex;
-        flex-wrap: nowrap;
-        // width: 100%;
-
-        article {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            img{
-                opacity: .5;
-                transition: opacity .3s ease;
-            }
-
-            &:hover {
-                img {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-
-    .carosel-prev-button,
-    .carosel-next-button {
+    article {
         display: flex;
         justify-content: center;
+        align-items: center;
+        scroll-snap-align: center;
 
-        button {
-            background-color: transparent;
-            border: none;
-            color: #8c89a2;
+        img {
             opacity: .5;
+            transition: opacity .3s ease;
+        }
 
-            &:hover {
+        &:hover {
+            img {
                 opacity: 1;
             }
         }
     }
+}
 
+.carousel-prev-button,
+.carousel-next-button {
+    display: flex;
+    justify-content: center;
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: #8c89a2;
+        opacity: .5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
 </style>
