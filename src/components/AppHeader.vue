@@ -227,7 +227,12 @@ export default {
                                     </li>
                                 </div>
                                 <div class="links-next" :class="index===0 ? 'small-panel' : ''">
-                                    <li v-for="(link, index) in linksNav[list].dropdownNext" :key="index"><a href=""> {{ link.name }}</a></li>
+                                    <li v-for="(link, index) in linksNav[list].dropdownNext" :key="index">
+                                        <a href="">
+                                            <span> 
+                                                {{ link.name }}
+                                            </span> 
+                                        </a></li>
                                 </div>
                                 <div class="nav-img" :class="index===0 ? 'img-panel' : ''">
                                     <img :src="link.image" > 
@@ -350,6 +355,14 @@ article {
     border-bottom: 4px solid #20ad96;
     padding: 0 !important;
     min-width: 11rem !important;
+
+    div li a span,
+     {
+        
+        &:hover {
+            color: #20ad96;
+        }
+    }
 }
 
 .my-width  {
