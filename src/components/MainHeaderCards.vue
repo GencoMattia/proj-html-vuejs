@@ -30,14 +30,43 @@ export default {
                 {
                     icon: "client-logo-07.png"
                 }
-            ]
+            ],
+
+            currentCardIndex: 0,
+            visibleCardCount: 6,
         };
     },
 
     methods: {
         getImagePath: function(img) {
             return new URL(`../assets/img/${img}`, import.meta.url).href;
-        }
+        },
+
+        prevCard() {
+            const container = this.$refs.carouselContainer;
+
+            if (container.scrollLeft === 0) {
+                container.scrollLeft = (this.clonedCards.length - this.visibleCardCount) * container.offsetWidth / this.visibleCardCount; 
+            } else {
+                container.scrollLeft -= container.offsetWidth;
+            }
+        },
+
+        nextCard() {
+            const container = this.$refs.carouselContainer;
+
+            if (container.scrollLeft >= (this.clonedCards.length - this.visibleCardCount) * container.offsetWidth / this.visibleCardCount) {
+                container.scrollLeft = 0;
+            } else {
+                container.scrollLeft += container.offsetWidth;
+            }
+        },
+
+        updateVisibleCardCount() {
+            const containerWidth = this.$refs.carouselContainer.offsetWidth;
+            const cardWidth = this.$refs.carouselContainer.querySelector('.col-2').offsetWidth;
+            this.visibleCardCount = Math.floor(containerWidth / cardWidth);
+        },
     },
 
     computed: {
@@ -47,26 +76,30 @@ export default {
             return [...lastSix, ...this.clientsCards, ...firstSix];
         },
     },
+
+    mounted() {
+        this.updateVisibleCardCount();
+    },
 };
 </script>
 
 <template>
-    <div class="my-container row"> 
+    <div class="my-container row">
         <div class="carosel-prev-button col-1">
-            <button class="prev-card">
+            <button class="prev-card" @click="prevCard">
                 <font-awesome-icon icon="chevron-left" />
             </button>
         </div>
-        <div class="carosel-container col-10">
+        <div class="carosel-container col-10" ref="carouselContainer">
             <div class="carosel-row row">
-                <article class="col-2" 
+                <article class="col-2"
                 v-for="(logo, index) in clonedCards" :key="index">
                     <img :src="getImagePath(logo.icon)" alt="client-logo">
                 </article>
             </div>
         </div>
         <div class="carosel-next-button col-1">
-            <button class="next-card">
+            <button class="next-card" @click="nextCard">
                 <font-awesome-icon icon="chevron-right" />
             </button>
         </div>
@@ -76,9 +109,14 @@ export default {
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
 
-    div {
+    .carosel-container {
+    overflow-x: hidden;
+    }
+
+    .carosel-row {
+        display: flex;
         flex-wrap: nowrap;
-        overflow: hidden;
+        // width: 100%;
 
         article {
             display: flex;
