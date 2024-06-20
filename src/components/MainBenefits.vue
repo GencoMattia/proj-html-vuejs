@@ -100,10 +100,26 @@ a{
     text-decoration: none;
     font-weight: bold;
     color: #8c89a2;
+    position: relative;
 
         span.arrow{
             font-size: 20px;
         }
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 0;
+    bottom: -.5rem;
+    width: 0;
+    background: lightgrey;
+    transition: width .5s;
+}
+
+a:hover::after {
+    width: 100%;
 }
 
 
