@@ -2,7 +2,9 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
-    components
+    components: {
+        FontAwesomeIcon,
+    },
     data() {
         return {
             adressInfo: {
