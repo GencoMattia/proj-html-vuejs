@@ -87,7 +87,9 @@ export default {
                 </div>
                 <div class="events-cards-wrapper">
                     <div class="card border-0" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
-                        <img :src="event.image" class="card-img-top" alt="...">
+                        <div class="image-container">
+                            <img :src="event.image" class="card-img-top" alt="...">
+                        </div>
                         <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text event-date">
                                 {{ event.start_date }}
@@ -132,21 +134,9 @@ export default {
             width: 15rem;
             font-size: 1rem;
 
-            &:hover {
-                box-shadow: 0 0 0 0.25rem rgba(39, 234, 11, 0.25);
-            }
-
             select {
                 width: 65%;
                 font-size: 1rem;
-
-                option {
-
-                    &::selection {
-                        color: white;
-                        color: #20AD96 !important;
-                    }
-                }
 
                 &:focus {
                     box-shadow: 0 0 0 0.25rem rgba(39, 234, 11, 0.25);
@@ -167,6 +157,19 @@ export default {
             margin-bottom: 2rem;
             text-align: center;
             display: flex;
+            overflow: hidden;
+
+            .image-container {
+                overflow: hidden;
+
+                .card-img-top {
+                    transition: transform 0.6s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
 
             .event-date {
                 color: #20ad96;
