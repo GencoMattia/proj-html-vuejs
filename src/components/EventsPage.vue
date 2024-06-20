@@ -51,14 +51,17 @@ export default {
                 </div>
                 <div class="events-filter d-flex justify-content-between mb-4">
                     <p class="available-events">
-                        We found {{ eventsList.length }} events available for you
+                        We found <span class="available-events-num">{{ eventsList.length }}</span> events available for you
                     </p>
-                    <select name="event-type" id="event-type">
-                        Event Type
+                    <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
                     </select>
                 </div>
                 <div class="events-cards-wrapper">
-                    <div class="card" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
+                    <div class="card border-0" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
                         <img :src="event.image" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text event-date">
@@ -86,6 +89,23 @@ export default {
 
         h1 {
             font-weight: bolder;
+        }
+    }
+
+    .events-filter {
+
+        .available-events{
+            color: #7e7e7e;
+
+            .available-events-num {
+                color: black;
+                font-weight: bold;
+            }
+        }
+
+        select {
+            width: 15rem;
+            font-size: 1rem;
         }
     }
     
