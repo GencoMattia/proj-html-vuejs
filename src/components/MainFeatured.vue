@@ -80,10 +80,10 @@ export default {
                         {{ course.title }}
                     </h3>
                     <span>
-                        {{ course.lessons }}
+                        <font-awesome-icon icon="file-lines" /> {{ course.lessons }}
                     </span>
                     <span>
-                        {{ course.students }}
+                        <font-awesome-icon icon="user" /> {{ course.students }}
                     </span>
                 </div>
             </article>
@@ -96,6 +96,13 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/mixins' as *;
+
+section>div>p{
+    @include uppercase-text()
+}
+
+
 
 
 </style>
