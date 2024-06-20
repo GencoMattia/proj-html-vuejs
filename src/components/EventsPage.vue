@@ -165,12 +165,13 @@ export default {
 
     .events-cards-wrapper {
         display: flex;
-        justify-content: space-between;
+        // justify-content: center;
+        gap: 2rem;
         flex-wrap: wrap;
         width: 100%;
 
         .card {
-            width: calc((100% / 3) - 1.5rem) !important;
+            width: calc((100% / 3) - 1.35rem) !important;
             margin-bottom: 2rem;
             text-align: center;
             display: flex;
