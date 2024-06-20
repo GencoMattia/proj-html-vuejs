@@ -55,6 +55,10 @@ export default {
 
         setActiveCircle(variable, index) {
             variable = index;
+        },
+
+        getSideActiveClass(index) {
+            return index === this.activeArticle - 1 || index === this.activeArticle + 1;
         }
     },
 
@@ -78,8 +82,9 @@ export default {
 
 <template>
     <section class="testimonials row overflow-hidden align-items-stretch justify-content-evenly">
-        <article v-for="(card, index) in visibleCards" :key="index" @click=""
-        class="testimonal-card col-3 p-5 d-flex flex-column justify-content-between">
+        <article v-for="(card, index) in visibleCards" :key="index" @click="activeArticle = learnersList.indexOf(card)"
+        class="testimonal-card col-3 p-5 d-flex flex-column justify-content-between"
+        :class="{ 'side-active': index !== 1 }">
             <div class="card-content">
                 <h2>
                     {{ card.title }}
@@ -108,7 +113,7 @@ export default {
                 :key="index" 
                 @click="activeArticle = index"
                 icon="fa-solid fa-circle" 
-                :class="{ 'active-circle': learnersList.indexOf(card) === activeArticle }"
+                :class="{ 'active-circle': index === activeArticle }"
             />
         </div>
     </section>
@@ -122,6 +127,10 @@ export default {
         margin-bottom: 7rem;
     }
 
+    .side-active {
+        opacity: .5;
+    }
+    
     .carosel-circles {
         color: #b7b5c4;
 
