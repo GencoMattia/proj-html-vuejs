@@ -103,6 +103,10 @@ export default {
                 font-weight: bold;
                 font-size: 1.2rem;
             }
+
+            .event-location {
+                color: #7e7e7e;
+            }
         }
     }
 
