@@ -2,12 +2,14 @@
 import AppHeader from "./components/AppHeader.vue"
 import AppMain from "./components/AppMain.vue"
 import AppFooter from "./components/AppFooter.vue"
+import EventsPage from "./components/EventsPage.vue"
 
 export default {
 components: {
   AppHeader,
   AppMain,
   AppFooter,
+  EventsPage,
 },
 
     data() {
@@ -21,6 +23,7 @@ components: {
 <template>
   <AppHeader/>
   <AppMain />
+  <EventsPage />
   <AppFooter />
   
   <main>
