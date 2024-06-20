@@ -96,6 +96,13 @@ export default {
             </div>
         </div>
     </section>
+    <section class="footer-copiright">
+        <div class="copiright">
+            <p>
+                © 2020 Maxcoach. All Rights Reserved
+            </p>
+        </div>
+    </section>
 </template>
 
 <style scoped lang="scss">
@@ -104,6 +111,22 @@ export default {
     .footer-information {
         background-color: #f8f8f8;
         padding: 69px 0px 50px 0px;
+    }
+
+    .footer-copiright {
+        background-color: #f8f8f8;
+
+        p {
+            color: #aeaeae;
+            font-size: 14px;
+            font-weight: 200;
+        }
+    }
+
+    .copiright {
+        text-align: center;
+        padding-top: 22px;
+        padding-bottom: 35px;
     }
 
             // adress
@@ -119,6 +142,7 @@ export default {
             text-decoration: none;
             color: #696969;
             padding-top: 0.50rem;
+            
             
 
             &:hover {
@@ -139,6 +163,7 @@ export default {
             color: #696969;
             font-size: 14px;
             padding-top: 1rem;
+            font-weight: 300;
 
             &:hover {
                 color: #20ad96;
