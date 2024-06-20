@@ -11,24 +11,192 @@ export default {
         return {
         linksNav: [
             {
-                name: 'Home'
+                name: 'Home',
+                image: './src/assets/images/homepages-mega-menu-image-alt.jpg',
+                dropdown: [
+                        {
+                            name: 'MaxCoach Education'
+                        },
+                        {
+                            name: 'Course Portal'
+                        },
+                        {
+                            name: 'Distant Learning'
+                        },
+                        {
+                            name: 'Multimedia Pedagogy'
+                        },
+                        {
+                            name: 'Modern Schooling'
+                        },
+                        {
+                            name: 'Remote Treaning'
+                        },
+                        {
+                            name: 'Healt Coaching'
+                        },
+                        {
+                            name: 'Gym Coaching'
+                        },
+                        {
+                            name: 'Business'
+                        },
+                        {
+                            name: 'Artist'
+                        },
+                        
+                    ],
+                    dropdownNext: [
+                        {
+                            name: 'Kitchen Coach'
+                        },
+                        {
+                            name: 'Motivation'
+                        },
+                        {
+                            name: 'Dancing'
+                        },
+                        {
+                            name: 'Guitar'
+                        },
+                        {
+                            name: 'Yoga'
+                        },
+                        {
+                            name: 'Photography'
+                        },
+                        {
+                            name: 'Personal Fiance'
+                        },
+                        {
+                            name: 'Sales Coaching'
+                        },
+                        {
+                            name: 'Mental Therapy'
+                        },
+                    ],
             },
             {
-                name: 'Pages'
+                name: 'Pages',
+                dropdown: [
+                        {
+                            name: 'Start Here'
+                        },
+                        {
+                            name: 'Success Story'
+                        },
+                        {
+                            name: 'About Me'
+                        },
+                        {
+                            name: 'About us 01'
+                        },
+                        {
+                            name: 'About us 02'
+                        },
+                        {
+                            name: 'About us 03'
+                        },
+                        {
+                            name: 'Contact me'
+                        },
+                        {
+                            name: 'Contact us'
+                        },
+                        {
+                            name: 'Purchaise Guide'
+                        },
+                        {
+                            name: 'Privacy Policy'
+                        },
+                        {
+                            name: 'Terms of Service'
+                        },
+                ],
             },
             {
-                name: 'Courses'
+                name: 'Courses',
+                dropdown: [
+                {
+                            name: 'Courses Grid 01'
+                        },
+                        {
+                            name: 'Courses Grid 02'
+                        },
+                        {
+                            name: 'Courses Grid 03'
+                        },
+                        {
+                            name: 'Membership Level'
+                        },
+                        {
+                            name: 'Become a Teacher'
+                        },
+                        {
+                            name: 'Profile'
+                        },
+                        {
+                            name: 'Checkout'
+                        },
+                        {
+                            name: 'Single Layout'
+                        },
+                ],
             },
             {
-                name: 'Features'
+                name: 'Features',
+                dropdown: [
+                    {
+                        name: 'Events'
+                    },
+                    {
+                        name: 'Zoom Meetings'
+                    },
+                ],
             },
             {
-                name: 'Blog'
+                name: 'Blog',
+                dropdown: [
+                    {
+                        name: 'Blog Grid'
+                    },
+                    {
+                        name: 'Blog Mansory'
+                    },
+                    {
+                        name: 'Blog Classic'
+                    },
+                    {
+                        name: 'Blog List'
+                    },
+                ],
             },
             {
-                name: 'Shop'
+                name: 'Shop',
+                dropdown: [
+                    {
+                        name: 'Shop Left Sidebar'
+                    },
+                    {
+                        name: 'Shop Right Sidebar'
+                    },
+                    {
+                        name: 'Cart'
+                    },
+                    {
+                        name: 'Wishlist'
+                    },
+                    {
+                        name: 'SingleProduct'
+                    },
+                ]
             },
-        ]
+        ],
+        list: 0,
+        
+        // imageHomePage: {
+        //     image: './src/assets/images/homepages-mega-menu-image-alt.jpg',
+        // },
         };
     }
 };
@@ -41,15 +209,31 @@ export default {
             <div class="logo">
                 <a href=""> <img src="../assets/images/dark-logo.png" alt=""></a>
             </div>
-            <div class="li-links" v-for="link in linksNav" :key="link">
+            <div class="li-links" v-for="(link,index) in linksNav" :key="index" @click="list=(index)">
                 <div class="dropdown">
                     <a class="dropdown-toggle border-green" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>{{ link.name }}</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu my-width">
+                        <li class="d-flex justify-content-between">
+                            <section class="d-flex my-padding">
+                                <div class="links" :class="index===0 ? 'wide-panel' : ''">
+                                    <li v-for="(link, index) in linksNav[list].dropdown" :key="index">
+                                        <a href=""> 
+                                            <span>
+                                                {{ link.name }}
+                                            </span>
+                                        </a>
+                                    </li>
+                                </div>
+                                <div class="links-next" :class="index===0 ? 'wide-panel' : ''">
+                                    <li v-for="(link, index) in linksNav[list].dropdownNext" :key="index"><a href=""> {{ link.name }}</a></li>
+                                </div>
+                                <div class="nav-img" :class="index===0 ? 'wide-panel' : ''">
+                                    <img :src="link.image" > 
+                                </div>
+                            </section>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -91,6 +275,7 @@ article {
             a.border-green {
                 text-decoration: none;
                 color: #3d3d3d;
+                font-weight: 300;
 
                 &:hover {
                     color: #20ad96;
@@ -109,14 +294,60 @@ article {
 
     }
 }
-                // nav-links
-div.dropdown {
-    a {
-        padding-top: 29px;
-        padding-bottom: 29px;
-        padding-left: 18px;
-        padding-right: 18px;
+        // dropdown menu
+
+.my-padding {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.nav-img {
+
+    img {
+        width: 100%;
     }
+}
+
+.wide-panel {
+    width: 350px;
+}
+
+.dropdown-menu {
+    border: collapse;
+    border: 1px solid white;
+    border-radius: 0px;    
+    border-bottom: 5px solid #20ad96;
+    padding: 0 !important;
+    min-width: 11rem !important;
+}
+
+.my-width  {
+    
+    
+
+    div.links li a ,
+    div.links-next li a {
+        text-decoration: none;
+        color: #6c6c6c;
+        font-size: 16px;
+        font-weight: 200;
+        margin-bottom: 2rem;
+
+        
+    }
+
+    li {
+        margin-bottom: 1rem;
+    }
+}
+                // nav-links
+div.dropdown > a {
+
+    padding-top: 29px;
+    padding-bottom: 29px;
+    padding-left: 18px;
+    padding-right: 18px;
+     
+    
 }
 
                 // Input
@@ -147,6 +378,7 @@ div.search {
         color: #b8b8b8;
         max-width: 100%;
         width: 150px;
+        
         
         
 
