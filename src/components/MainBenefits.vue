@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
-div.my-container>div>p{
+div>p:first-child{
     @include uppercase-text();
     color: #8c89a2;
 }
