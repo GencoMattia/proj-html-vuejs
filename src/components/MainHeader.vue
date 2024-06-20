@@ -1,5 +1,9 @@
 <script>
+import { FontAwesomeIcon } from '../js/font-awesome.js';
 export default {
+    components:{
+        FontAwesomeIcon
+    },
     data() {
         return {
 
@@ -25,7 +29,7 @@ export default {
                         Learning is a life-long journey that in fact we never find the terminate stop. Stop searching, enjoy the process.
                     </p>
                     <button>
-                        <font-awesome-icon icon="fa-solid fa-download" /> Download free guide
+                        <font-awesome-icon :icon="['fas', 'download']" /> Download free guide
                     </button>
                     <p>
                         Have questions? <a href="#">Get Free Sample</a>
