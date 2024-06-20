@@ -91,7 +91,7 @@ export default {
                             <img :src="event.image" class="card-img-top" alt="...">
                             <div class="overlay">
                                 <button>
-                                    Ciao
+                                    Get ticket
                                 </button>
                             </div>
                         </div>
@@ -186,6 +186,14 @@ export default {
                     background-color: rgba(63,58,100,0.6);
                     opacity: 0;
                     transition: opacity 0.3s ease;
+
+                    button {
+                        font-weight: bolder;
+                        color: #20ad96;
+                        border: none;
+                        padding: .5rem 2rem;
+                        border-radius: .5rem;
+                    }
                 }
 
                 .card-img-top {
