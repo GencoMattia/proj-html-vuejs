@@ -43,12 +43,6 @@ export default {
     <MainStatistics />
     <MainBlogs />
     <MainNewsletter />
-
-
-
-    <h1>
-        Io Sono un Main!
-    </h1>
 </template>
 
 <style scoped lang="scss">
