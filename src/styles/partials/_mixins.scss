@@ -1,3 +1,10 @@
 @mixin uppercase-text {
     text-transform: uppercase;
 }
+
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
