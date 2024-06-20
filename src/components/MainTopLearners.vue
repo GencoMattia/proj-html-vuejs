@@ -10,7 +10,7 @@ export default {
         return {
             learnersList: [
                 {
-                    avatar:"testimonial-avata-01.jpg",
+                    avatar:"testimonial-avata-02.jpg",
                     name: "Mina Hollace",
                     occupation: "Freelancer",
                     title: "High level of efficiency and scientific teaching methods",
@@ -18,7 +18,7 @@ export default {
                     isVisible: false,
                 },
                 {
-                    avatar:"testimonial-avata-02.jpg",
+                    avatar:"testimonial-avata-04.jpg",
                     name: "Madley Pondor",
                     occupation: "IT Specialist",
                     title: "Professional team of specialists and passionate mentors at reach",
@@ -26,7 +26,7 @@ export default {
                     isVisible: false,
                 },
                 {
-                    avatar:"testimonial-avata-03.jpg",
+                    avatar:"testimonial-avata-01.jpg",
                     name: "Luvic Dubble",
                     occupation: "Private Tutor",
                     title: "The MaxCoach team works really hard to ensure high quality",
@@ -34,7 +34,7 @@ export default {
                     isVisible: false,
                 },
                 {
-                    avatar:"testimonial-avata-04.jpg",
+                    avatar:"testimonial-avata-03.jpg",
                     name: "Florence Themes",
                     occupation: "Multimedia Admin",
                     title: "It's a choice of quality for people with special needs",
@@ -79,7 +79,7 @@ export default {
 <template>
     <section class="testimonials row overflow-hidden align-items-stretch justify-content-evenly">
         <article v-for="(card, index) in visibleCards" :key="index" @click=""
-        class="testimonal-card col-3 p-1 d-flex flex-column justify-content-between mb-4">
+        class="testimonal-card col-3 p-5 d-flex flex-column justify-content-between mb-4">
             <div class="card-content">
                 <h2>
                     {{ card.title }}
@@ -88,12 +88,17 @@ export default {
                     {{ card.text }}
                 </p>
             </div>
-            <div class="card-profile">
-                <figure class="testimonial-picture">
+            <div class="card-profile d-flex align-items-center">
+                <div class="testimonial-picture me-4">
                     <img :src="getImagePath(card.avatar)" :alt="`{{ card.name }}-img`">
-                </figure>
-                <div class="testimonial-occupation">
-                    / {{ card.occupation }}
+                </div>
+                <div class="testimonial-info">
+                    <p class="testimonial-name">
+                        {{ card.name }}
+                    </p>
+                    <p class="testimonial-occupation">
+                        / {{ card.occupation }}
+                    </p>
                 </div>
             </div>
         </article>
@@ -110,11 +115,44 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../styles/partials/mixins" as *;
+
+    article {
+        background-color: lightcyan;
+    }
+
     .carosel-circles {
         color: #b7b5c4;
 
         .active-circle {
             color: #3f3a64;
         }
+    }
+
+    .testimonial-picture {
+        width: 75px;
+
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .card-content {
+        h2 {
+            font-size: 1rem;
+            font-weight: bolder;
+        }
+    }
+
+    .testimonial-name {
+        @include uppercase-text;
+        font-weight: bold;
+        font-size: .9rem;
+    }
+
+    .testimonial-occupation {
+        color: #979797;
+        font-size: .8rem;
     }
 </style>
