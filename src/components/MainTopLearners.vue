@@ -79,7 +79,7 @@ export default {
 <template>
     <section class="testimonials row overflow-hidden align-items-stretch justify-content-evenly">
         <article v-for="(card, index) in visibleCards" :key="index" @click=""
-        class="testimonal-card col-3 p-5 d-flex flex-column justify-content-between mb-4">
+        class="testimonal-card col-3 p-5 d-flex flex-column justify-content-between">
             <div class="card-content">
                 <h2>
                     {{ card.title }}
@@ -119,6 +119,7 @@ export default {
 
     article {
         background-color: lightcyan;
+        margin-bottom: 7rem;
     }
 
     .carosel-circles {
