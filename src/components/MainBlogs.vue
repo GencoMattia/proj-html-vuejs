@@ -1,17 +1,82 @@
 <script>
+import img1 from '../assets/img/artist-blog-03-480x352.jpeg';
+import img2 from '../assets/img/artist-blog-01-480x352.jpg';
 export default {
     data() {
         return {
-        
-        };
+            blogs:[{
+                img: img1,
+                author: 'artist',
+                title: 'Brush Strokes Energize Trees in Paintings',
+                date: 'May 15, 2020',
+                views: '688 views'
+            },
+            {
+                img: img2,
+                author: 'artist',
+                title: 'Pocket-Sized Notebooks Hold Miniature Paintings',
+                date: 'May 15, 2020',
+                views: '603 views'
+            }],
+            mostViewed:[{
+                    title:'Become a Better Blogger: Content Planning'
+                },
+                {
+                    title:'Promoting Your Online Business on Pinterest'
+                },
+                {
+                    title:'Gamification and Game-Based Learning'
+                },
+                {
+                    title:'Designing an Online Course from Expert\'s perspective'
+                },
+                {
+                    title:'Why Online Courses Are the Future of Education'
+                }
+            ]
+        }
     }
 };
 </script>
 
 <template>
+    <section>
+        <div>
+            <div id="most-viewed">
+                <p>enjoyable insights</p>
+                <h2>
+                    Most Viewed <span>Best Blog</span>
+                </h2>
+                <ul>
+                    <li v-for="viewed in mostViewed">
+                        {{ viewed.title }}
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div v-for="blog in blogs" class="card" style="width: 18rem;">
+                    <img class="card-img-top" :src="blog.img" alt="image">
+                    <div class="card-body">
+                        <p>
+                            {{ blog.author }}
+                        </p>
+                        <h3>
+                            {{ blog.title }}
+                        </h3>
+                        <span>
+                            {{ blog.date }}
+                        </span>
+                        <span>
+                            {{ blog.views }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
