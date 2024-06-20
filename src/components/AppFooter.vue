@@ -1,5 +1,5 @@
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { FontAwesomeIcon } from '../js/font-awesome';
 
 export default {
     components: {
@@ -67,20 +67,26 @@ export default {
                     <a href="">
                         {{ adressInfo.email }}
                     </a>
+                    <div class="icons d-flex">
+                        <div> <a href=""><font-awesome-icon icon="fa-brands fa-square-facebook" /></a></div>
+                        <div> <a href=""><font-awesome-icon icon="fa-brands fa-twitter" /> </a></div>
+                        <div> <a href=""><font-awesome-icon :icon="['fab', 'instagram']" /> </a></div>
+                        <div> <a href=""><font-awesome-icon icon="fa-brands fa-linkedin" /> </a></div>
+
+                    </div>
                 </div>
                 <div class="col-6 d-flex">
                     <div class="col-3 explore">
                         <h6>
                             Explore
                         </h6>
-                        <a class="d-flex flex-wrap" href="" v-for="link in exploreInfo" :key="info">
+                        <a class="d-flex flex-wrap" href="" v-for="link in exploreInfo" :key="link">
                             {{ link.link }}
                         </a>
-                        <font-awesome-icon icon="fa-brands fa-square-facebook" />
                     </div>
                     <div class="col-3 explore-next">
                         <h6></h6>
-                        <a class="d-flex flex-wrap" href="" v-for="link in exploreInfoNext" :key="next">
+                        <a class="d-flex flex-wrap" href="" v-for="link in exploreInfoNext" :key="link">
                             {{ link.link }}
                         </a>
                     </div>
@@ -88,7 +94,7 @@ export default {
                         <h6>
                             Information
                         </h6>
-                        <a class="d-flex flex-wrap" href="" v-for="link in InformationInfo" :key="info">
+                        <a class="d-flex flex-wrap" href="" v-for="link in InformationInfo" :key="link">
                             {{ link.link }}
                         </a>
                     </div>
@@ -149,6 +155,21 @@ export default {
                 color: #20ad96;
                 transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
             }
+        }
+
+        .icons  div a {
+            font-size: 25px;
+            color: #b1b1b1;
+
+            &:hover {
+                color: #20ad96;
+                transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+        }
+
+        .icons div {
+            padding-right: 2rem;
+            margin-top: 2rem;
         }
 
         
