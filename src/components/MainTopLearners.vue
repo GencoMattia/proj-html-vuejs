@@ -92,17 +92,23 @@ export default {
                 </div>
             </div>
         </article>
-        <div class="carosel-circles">
+        <div class="carosel-circles d-flex justify-content-center gap-3">
             <font-awesome-icon 
-                v-for="index in learnersList.length" 
+                v-for="(card, index) in learnersList" 
                 :key="index" 
                 icon="fa-solid fa-circle" 
-                :class="{ 'active-circle': index === activeArticle }"
+                :class="{ 'active-circle': learnersList.indexOf(card) === activeArticle }"
             />
         </div>
     </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+    .carosel-circles {
+        color: #b7b5c4;
 
+        .active-circle {
+            color: #3f3a64;
+        }
+    }
 </style>
