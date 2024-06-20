@@ -132,7 +132,8 @@ export default {
         padding: 5rem;
 
         h1 {
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 3rem
         }
     }
 
