@@ -132,7 +132,7 @@ export default {
         padding: 5rem;
 
         h1 {
-            font-weight: bolder;
+            font-weight: 600;
         }
     }
 
@@ -165,7 +165,6 @@ export default {
 
     .events-cards-wrapper {
         display: flex;
-        // justify-content: center;
         gap: 2rem;
         flex-wrap: wrap;
         width: 100%;
