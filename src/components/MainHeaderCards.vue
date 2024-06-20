@@ -60,7 +60,7 @@ export default {
         <div class="carosel-container col-10">
             <div class="carosel-row row">
                 <article class="col-2" 
-                v-for="(logo, index) in clientsCards" :key="index">
+                v-for="(logo, index) in clonedCards" :key="index">
                     <img :src="getImagePath(logo.icon)" alt="client-logo">
                 </article>
             </div>
