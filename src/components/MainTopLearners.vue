@@ -2,6 +2,10 @@
 import { FontAwesomeIcon } from '../js/font-awesome';
 
 export default {
+    components: {
+        FontAwesomeIcon,
+    },
+
     data() {
         return {
             learnersList: [
@@ -69,7 +73,7 @@ export default {
 </script>
 
 <template>
-    <section class="testimonials row flex-nowrap overflow-hidden align-items-stretch justify-content-evenly">
+    <section class="testimonials row overflow-hidden align-items-stretch justify-content-evenly">
         <article v-for="(card, index) in visibleCards" :key="index" class="testimonal-card col-3 p-1 d-flex flex-column justify-content-between">
             <div class="card-content">
                 <h2>
@@ -88,6 +92,14 @@ export default {
                 </div>
             </div>
         </article>
+        <div class="carosel-circles">
+            <font-awesome-icon 
+                v-for="index in learnersList.length" 
+                :key="index" 
+                icon="fa-solid fa-circle" 
+                :class="{ 'active-circle': index === activeArticle }"
+            />
+        </div>
     </section>
 </template>
 
