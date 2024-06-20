@@ -68,7 +68,6 @@ export default {
         
 
 <style scoped lang="scss">
-@use '../styles/general.scss' as *;
 
 
 article {
