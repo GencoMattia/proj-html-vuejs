@@ -138,6 +138,11 @@ h5{
     font-weight: 600;
 }
 
+h5:hover{
+    color: #20Ad96;
+    cursor: pointer;
+}
+
 div.study>span{
     font-size: 14px;
     margin-right: 2rem;
