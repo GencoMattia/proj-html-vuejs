@@ -1,4 +1,5 @@
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import img1 from '../assets/images/course-02-480x298.jpg';
 import img2 from '../assets/images/stock-full-hd-03-480x298.jpg';
 import img3 from '../assets/images/stock-full-hd-04-480x298.jpg';
@@ -7,11 +8,14 @@ import img5 from '../assets/images/course-featured-image-01-480x298.jpg';
 import img6 from '../assets/images/stock-full-hd-05-480x298.jpg';
 
 export default {
+    components:{
+        FontAwesomeIcon
+    },
     data() {
         return {
             onlineCourses:[{
                 img: img1,
-                price: '$40.00',
+                price: '$40',
                 title: 'Learning to write as a Professional Author',
                 lessons: '20 Lessons',
                 students: '50 Students'
@@ -25,28 +29,28 @@ export default {
             },
             {
                 img: img3,
-                price: '$19.00',
+                price: '$19',
                 title: 'Open Programming Courses for Everyone: Python',
                 lessons: '17 Lessons',
                 students: '62 Students'
             },
             {
                 img: img4,
-                price: '$26.00',
+                price: '$26',
                 title: 'Accademic Listening and Note-taking',
                 lessons: '14 Lessons',
                 students: '67 Students'
             },
             {
                 img: img5,
-                price: '$39.00',
+                price: '$39',
                 title: 'Master jQuery in a Short Period of Time',
                 lessons: '6 Lessons',
                 students: '51 Students'
             },
             {
                 img: img6,
-                price: '$59.00',
+                price: '$59',
                 title: 'Introduction to Javascript for Beginners',
                 lessons: '14 Lessons',
                 students: '76 Students'
@@ -66,8 +70,11 @@ export default {
             <article v-for="course in onlineCourses">
                 <img :src="course.img" alt="">
                 <div>
-                    <p>
-                        {{ course.price }}
+                    <p v-if="course.price === 'Free'">
+                        {{ course.price }} 
+                    </p>
+                    <p v-else>
+                        {{ course.price }} <span>.00</span>
                     </p>
                     <h3>
                         {{ course.title }}
@@ -88,6 +95,7 @@ export default {
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
 
 </style>
