@@ -30,34 +30,80 @@ export default {
 
 <template>
     <section>
-        <div>
-            <p>
-                maxcoach available courses
-            </p>
-            <h2>
-                Access <span>Smart Tutoring</span> Program For Benefits.
-            </h2>
-        </div>
-        <div>
-            <article v-for="benefit in benefits">
-                <img :src="benefit.img" alt="">
-                <div>
-                    <h3>
-                        {{ benefit.title }}
-                    </h3>
-                    <p>
-                        {{ benefit.paragraph }}
-                    </p>
-                    <a href="#">
-                        {{ benefit.link }} <span>&rightarrow;</span>
-                    </a>
-                </div>
-            </article>
+        <div class="my-container">
+            <div class="text-center mb-5">
+                <p>
+                    maxcoach available courses
+                </p>
+                <h2>
+                    Access <span>Smart Tutoring</span> Program For Benefits.
+                </h2>
+            </div>
+            <div class="d-flex">
+                <article class="p-4 me-3" v-for="benefit in benefits">
+                    <img class="mb-3" :src="benefit.img" alt="">
+                    <div>
+                        <h4 class="mb-3">
+                            {{ benefit.title }}
+                        </h4>
+                        <p>
+                            {{ benefit.paragraph }}
+                        </p>
+                        <a href="#">
+                            <span class="me-1">{{ benefit.link }}</span><span class="arrow">&rightarrow;</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
-
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/mixins';
+
+div>p{
+    color: #8c89a2;
+}
+
+h2{
+    font-weight: 600;
+
+        span{
+            color: #20ad96;
+            font-weight: 400;
+        }
+}
+
+article{
+    width: calc((100% / 3) - 1rem);
+    
+        h4{
+            font-weight: 600;
+        }
+
+        p{
+            font-size: 15px
+        }
+}
+
+article:hover{
+    cursor: pointer;
+
+        a{
+            color: #20ad96;
+        }
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #8c89a2;
+
+        span.arrow{
+            font-size: 20px;
+        }
+}
+
 
 </style>
