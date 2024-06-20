@@ -60,9 +60,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/partials/mixins';
+@use '../styles/partials/mixins' as *;
 
 div>p{
+    @include uppercase-text();
     color: #8c89a2;
 }
 
