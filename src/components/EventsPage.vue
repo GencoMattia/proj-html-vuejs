@@ -40,7 +40,7 @@ export default {
         <div class="my-container">
             <section class="main_events"> 
                 <div class="page-path">
-                    <p>
+                    <p class="m-0">
                         home  /  event
                     </p>
                 </div>
@@ -49,7 +49,7 @@ export default {
                         Events
                     </h1>
                 </div>
-                <div class="events-filter d-flex justify-content-between">
+                <div class="events-filter d-flex justify-content-between mb-4">
                     <p class="available-events">
                         We found {{ eventsList.length }} events available for you
                     </p>
@@ -81,6 +81,15 @@ export default {
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
 
+    .page-title {
+        padding: 5rem;
+
+        h1 {
+            font-weight: bolder;
+        }
+    }
+    
+
     .events-cards-wrapper {
         display: flex;
         justify-content: space-between;
@@ -88,7 +97,7 @@ export default {
         width: 100%;
 
         .card {
-            width: calc((100% / 3) - 3rem) !important;
+            width: calc((100% / 3) - 1.5rem) !important;
             margin-bottom: 2rem;
             text-align: center;
             display: flex;
