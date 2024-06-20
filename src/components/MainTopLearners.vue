@@ -122,8 +122,12 @@ export default {
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
 
+    section {
+        background-color: #f8f8f8;
+    }
+
     article {
-        background-color: lightcyan;
+        background-color: white;
         margin-bottom: 7rem;
     }
 
