@@ -38,7 +38,15 @@ export default {
         getImagePath: function(img) {
             return new URL(`../assets/img/${img}`, import.meta.url).href;
         }
-    }
+    },
+
+    computed: {
+        clonedCards() {
+            const firstSix = this.clientsCards.slice(0, 6);
+            const lastSix = this.clientsCards.slice(-6);
+            return [...lastSix, ...this.clientsCards, ...firstSix];
+        },
+    },
 };
 </script>
 
