@@ -1,5 +1,11 @@
 <script>
+import { FontAwesomeIcon } from '../js/font-awesome';
+
 export default {
+    components: {
+        FontAwesomeIcon,
+    },
+
     data() {
         return {
             clientsCards: [
@@ -38,14 +44,30 @@ export default {
 
 <template>
     <div class="my-container row"> 
-        <article class="col-2" 
-        v-for="(logo, index) in clientsCards" :key="index">
-            <img :src="getImagePath(logo.icon)" alt="client-logo">
-        </article>
+        <div class="carosel-prev-button col-1">
+            <button class="prev-card">
+                <font-awesome-icon icon="chevron-left" />
+            </button>
+        </div>
+        <div class="carosel-container col-10">
+            <div class="carosel-row row">
+                <article class="col-2" 
+                v-for="(logo, index) in clientsCards" :key="index">
+                    <img :src="getImagePath(logo.icon)" alt="client-logo">
+                </article>
+            </div>
+        </div>
+        <div class="carosel-next-button col-1">
+            <button class="next-card">
+                <font-awesome-icon icon="chevron-right" />
+            </button>
+        </div>
     </div>
 </template>
 
 <style scoped lang="scss">
+@use "../styles/partials/mixins" as *;
+
     div {
         flex-wrap: nowrap;
         overflow: hidden;
@@ -67,4 +89,22 @@ export default {
             }
         }
     }
+
+    .carosel-prev-button,
+    .carosel-next-button {
+        display: flex;
+        justify-content: center;
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: #8c89a2;
+            opacity: .5;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
 </style>
