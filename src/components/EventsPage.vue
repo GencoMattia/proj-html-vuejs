@@ -89,6 +89,11 @@ export default {
                     <div class="card border-0" style="width: 18rem;" v-for="(event, index) in eventsList" :key="index">
                         <div class="image-container">
                             <img :src="event.image" class="card-img-top" alt="...">
+                            <div class="overlay">
+                                <button>
+                                    Ciao
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text event-date">
@@ -159,15 +164,33 @@ export default {
             display: flex;
             overflow: hidden;
 
+            &:hover img{
+                transform: scale(1.1);
+            }
+
+            &:hover .overlay {
+                opacity: 1 !important;
+            }
+
             .image-container {
                 overflow: hidden;
+                position: relative;
+
+                .overlay {
+                    @include flex-centered;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(63,58,100,0.6);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
 
                 .card-img-top {
                     transition: transform 0.6s ease;
 
-                    &:hover {
-                        transform: scale(1.1);
-                    }
                 }
             }
 
