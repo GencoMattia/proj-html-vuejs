@@ -96,7 +96,7 @@ export default {
                 </div>
             </div>
             <div class="d-flex justify-content-center p-2">
-                <button>View all courses &rightarrow;</button>
+                <button class="px-5 py-2 rounded-1">View all courses &rightarrow;</button>
             </div>
         </div>
     </section>
@@ -147,6 +147,14 @@ div.study>span{
     font-size: 14px;
     margin-right: 2rem;
     color: #8c89a2;
+}
+
+button{
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color: #20Ad96;
 }
 
 </style>
