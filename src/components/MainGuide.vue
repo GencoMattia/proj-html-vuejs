@@ -1,5 +1,6 @@
 <script>
 import { FontAwesomeIcon } from '../js/font-awesome.js';
+
 export default {
     components:{
         FontAwesomeIcon
@@ -45,7 +46,7 @@ export default {
                             Sneek peek into what has in store for you on our online teaching and mentoring portal. Seek for some hidden hints of early-bird rewards as well.
                         </p>
                         <p class="py-2">
-                            <a href="#" class="my_cl-green fw-bold">Download free guidebook <font-awesome-icon :icon="['fas', 'arrow-right']"/></a> 
+                            <a href="#" class="my_cl-green fw-bold text-decoration-underline">Download free guidebook &rarr;</a> 
                         </p>
                     </article>
                 </section>
@@ -123,10 +124,6 @@ export default {
     }
     .my_cl-blue{
         color: #3f3a64;
-    }
-    .my_bg-orange{
-        color: #e5c791;
-        background-color: #e5c791;
     }
     .my_pos{
         position:relative; 
