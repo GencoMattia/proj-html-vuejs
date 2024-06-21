@@ -67,7 +67,7 @@ export default {
 </script>
 
 <template>
-    <div class="my-container row">
+    <div class="my-container row mb-5">
         <div class="carousel-prev-button col-1">
             <button class="prev-card" @click="prevCard">
                 <font-awesome-icon icon="chevron-left" />
