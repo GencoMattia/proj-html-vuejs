@@ -211,7 +211,6 @@ export default {
 
                 .card-img-top {
                     transition: transform 0.6s ease;
-
                 }
             }
 
