@@ -357,8 +357,7 @@ article {
     padding: 0 !important;
     min-width: 11rem !important;
 
-    div li a span,
-     {
+    div li a span{
         
         &:hover {
             color: #20ad96;
