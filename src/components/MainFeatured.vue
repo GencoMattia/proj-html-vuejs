@@ -159,12 +159,7 @@ div.study>span{
 }
 
 button{
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    color: white;
-    background-color: #20Ad96;
-    border-radius: 5px;
+    @include button-style();
 }
 
 </style>
