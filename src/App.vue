@@ -1,7 +1,11 @@
 <script>
-import AppHeader from "./components/AppHeader.vue";
-import AppMain from "./components/AppMain.vue";
-import AppFooter from "./components/AppFooter.vue";
+import AppHeader from "./components/AppHeader.vue"
+import AppMain from "./components/AppMain.vue"
+import AppFooter from "./components/AppFooter.vue"
+import EventsPage from "./components/EventsPage.vue"
+
+import { store } from "./store";
+
 import "@fontsource/montserrat";
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/400-italic.css";
@@ -11,19 +15,26 @@ components: {
   AppHeader,
   AppMain,
   AppFooter,
+  EventsPage,
 },
 
     data() {
         return {
-        
+          
         };
+    },
+    
+    computed: {
+      activePageComponent() {
+        return store.pressedLink;
+      }
     }
 };
 </script>
 
 <template>
   <AppHeader/>
-  <AppMain />
+  <component :is="activePageComponent" />
   <AppFooter />
   
   <main>
@@ -35,7 +46,7 @@ components: {
   @use "../node_modules/bootstrap/scss/bootstrap.scss";
   @use "./styles/general.scss";
 
-  body {
-    font-family: "Montserrat";
-  }
+  // body {
+  //   font-family: "Montserrat";
+  // }
 </style>
