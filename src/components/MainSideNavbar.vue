@@ -33,7 +33,7 @@ export default {
     top: 30%;
     right: 0;
     background-color: white;
-    border: 2px solid black;
+    box-shadow: 2px 1px 1px 3px #b9b9b9;
     display: flex;
     flex-direction: column;
     align-items: center;
