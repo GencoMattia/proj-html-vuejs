@@ -62,6 +62,10 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
+section {
+    padding: 6rem 0;
+}
+
 div>p:first-child{
     @include uppercase-text();
     color: #8c89a2;
@@ -72,7 +76,7 @@ h2{
 
         span{
             color: #20ad96;
-            font-weight: 400;
+            font-weight: 200;
         }
 }
 
