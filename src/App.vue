@@ -4,6 +4,8 @@ import AppMain from "./components/AppMain.vue"
 import AppFooter from "./components/AppFooter.vue"
 import EventsPage from "./components/EventsPage.vue"
 
+import { store } from "./store";
+
 import "@fontsource/montserrat";
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/400-italic.css";
@@ -18,9 +20,10 @@ components: {
 
     data() {
         return {
-          activePage: "AppMain",
+          activePage: store.pressedLink,
         };
-    }
+    },
+
 };
 </script>
 
