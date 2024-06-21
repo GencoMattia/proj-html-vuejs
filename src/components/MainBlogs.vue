@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '../js/font-awesome';
 import img1 from '../assets/img/artist-blog-03-480x352.jpeg';
 import img2 from '../assets/img/artist-blog-01-480x352.jpg';
+
 export default {
     components:{
         FontAwesomeIcon
@@ -43,7 +44,7 @@ export default {
 };
 </script>
 
-<template>
+<template>        
     <section>
         <div class="my-container">
             <div class="d-flex justify-content-between">
