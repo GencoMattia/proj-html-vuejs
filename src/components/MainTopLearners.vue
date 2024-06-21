@@ -124,6 +124,7 @@ export default {
 
     section {
         background-color: #f8f8f8;
+        width: 100%;
     }
 
     article {

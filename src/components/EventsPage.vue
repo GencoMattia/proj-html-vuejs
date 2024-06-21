@@ -2,6 +2,8 @@
 import axios from 'axios';
 import { FontAwesomeIcon } from '../js/font-awesome';
 
+import { store } from "../store";
+
 export default {
     components: {
         FontAwesomeIcon 
@@ -15,10 +17,6 @@ export default {
             ],
 
             eventsTypeList: [
-
-            ],
-
-            filteredEventsList: [
 
             ],
 
@@ -50,6 +48,11 @@ export default {
                 console.error("Error fetching events:", error);
             });
         },
+
+        getPressedLink(link) {
+            store.pressedLink = link;
+            console.log(`Hai premuto ${store.pressedLink}`);
+        }
     },
 
     computed: {
@@ -74,7 +77,7 @@ export default {
             <section class="main_events"> 
                 <div class="page-path">
                     <p class="m-0">
-                        home  /  event
+                        <a href="#" @click="getPressedLink('AppMain')">home</a>  /  event
                     </p>
                 </div>
                 <div class="page-title text-center">
