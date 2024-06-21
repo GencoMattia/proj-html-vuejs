@@ -9,31 +9,39 @@ export default {
 </script>
 
 <template>
-    <section class="my-container get-started text-center">
-        <div class="elements-wrapper">
-            <h2>
-                Start today for getting <span>Online Certification</span>
-            </h2>
-    
-            <h1>
-                You can be your own guiding star with our help!
-            </h1>
-            <button class="get-started-button">
-                Get started now
-            </button>
-        </div>
-        <div class="background-landscape">
-            <img class="stripes-shape" src="../assets/img/maxcoach-shape-01.png" alt="maxcoach-shape-01">
-            <img class="semicircles-shape" src="../assets/img/maxcoach-shape-02.png" alt="maxcoach-shape-02">
-            <div class="circle-shape">
-
+    <article class="bg-color">
+        <section class="my-container get-started text-center">
+            <div class="elements-wrapper">
+                <h2>
+                    Start today for getting <span>Online Certification</span>
+                </h2>
+        
+                <h1>
+                    You can be your own guiding star with our help!
+                </h1>
+                <button class="get-started-button">
+                    Get started now
+                </button>
             </div>
-        </div>
-    </section>
+            <div class="background-landscape">
+                <img class="stripes-shape" src="../assets/img/maxcoach-shape-01.png" alt="maxcoach-shape-01">
+                <img class="semicircles-shape" src="../assets/img/maxcoach-shape-02.png" alt="maxcoach-shape-02">
+                <div class="circle-shape">
+
+                </div>
+            </div>
+        </section>
+    </article>
 </template>
 
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
+
+.bg-color {
+    background-color: #f8f8f8;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
 
 section {
     position: relative;
@@ -49,7 +57,7 @@ section {
             font-weight: 700;
     
             span {
-                font-weight: 600;
+                font-weight: 200;
                 color: #20AD96;
             }
         }
