@@ -28,7 +28,7 @@ export default {
     height: auto;
     width: 50px;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 30%;
     right: 0;
     background-color: white;
