@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <h1> IO sono un FOoter!</h1>
+    
 </template>
 
 <style scoped lang="scss">
