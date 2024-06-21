@@ -23,7 +23,11 @@ export default {
             </button>
         </div>
         <div class="background-landscape">
+            <img class="stripes-shape" src="../assets/img/maxcoach-shape-01.png" alt="maxcoach-shape-01">
+            <img class="semicircles-shape" src="../assets/img/maxcoach-shape-02.png" alt="maxcoach-shape-02">
+            <div class="circle-shape">
 
+            </div>
         </div>
     </section>
 </template>
@@ -69,6 +73,18 @@ section {
         right: 0;
         bottom: 0;
         z-index: 1;
+
+        .stripes-shape {
+            position: absolute;
+            left: 10px;
+            bottom: 20px;
+        }
+
+        .semicircles-shape {
+            position: absolute;
+            right: 10px;
+            top: 20px;
+        }
     }
 }
 
