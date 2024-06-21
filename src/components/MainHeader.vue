@@ -25,11 +25,11 @@ export default {
                         Have questions? <a href="#">Get Free Sample</a>
                     </p>
                 </article>
-                <div class="col-6 ciao">
-                        <img src="../assets/img/about-me-profile-ohm4dxoearqbxny7q3bq1pzbdgofdx0tobbeqcvzd0.jpg" alt="">
+                <div class="col-6">
+                        <img src="../assets/img/about-me-profile-ohm4dxoearqbxny7q3bq1pzbdgofdx0tobbeqcvzd0.jpg" alt="about-me-profile">
                     <div class="my_bg-move">
                         <div class="top-image"></div>
-                    </div>``
+                    </div>
                 </div>
             </section>
         </div>
