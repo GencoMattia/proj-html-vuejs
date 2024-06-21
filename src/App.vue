@@ -29,8 +29,8 @@ components: {
 
 <template>
   <AppHeader/>
-  <AppMain />
-  <EventsPage />
+  <AppMain v-show="activePage === 'AppMain'"/>
+  <EventsPage v-show="activePage === 'EventsPage'"/>
   <AppFooter />
   
   <main>
