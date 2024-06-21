@@ -33,7 +33,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="container my-container">
+        <div class="container my-container email-wrapper">
             <div class="row">
                 <div class="col-12 center my-padding">
                     <h2>
@@ -66,10 +66,11 @@ export default {
 
 .bg-img-container {
     position: relative;
+    z-index: 1;
 
     .element-image-circle {
         position: absolute;
-        left: 1424px;
+        right: 75px;
         top: 138px;
         z-index: 1;
 
@@ -83,14 +84,14 @@ export default {
 
     .element-image-dots {
         position: absolute;
-        left: 1349px;
+        right: 100px;
         top: 122px;
     }
 
     .element-circle {
         position: absolute;
-        left: 283px;
-        top: 122px;
+        left: 50px;
+        top: 200px;
 
         .shape {
             height: 56px;
@@ -100,6 +101,11 @@ export default {
         border: 7px solid #8FD6CA;
         }
     }
+}
+
+.email-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
 .bg-color {
