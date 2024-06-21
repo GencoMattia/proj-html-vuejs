@@ -61,7 +61,9 @@ export default {
                 </div>
                 <div id="card-section" class="d-flex">
                     <div v-for="blog in blogs" class="card">
-                        <img class="card-img-top" :src="blog.img" alt="image">
+                        <div class="image-container">
+                            <img class="card-img-top" :src="blog.img" alt="image">
+                        </div>
                         <div class="card-body py-4">
                             <p>
                                 {{ blog.author }}
@@ -136,6 +138,18 @@ div#card-section{
 div.card{
     max-width: 300px;
     margin-left: 3rem;
+}
+
+div.image-container{
+    overflow: hidden;
+
+        img{
+            transition: transform 0.6s ease;
+
+            &:hover{
+                @include scaling-hover;
+            }
+        }
 }
 
 h5{

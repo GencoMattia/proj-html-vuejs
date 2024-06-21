@@ -155,15 +155,16 @@ button {
 }
 
 h2 {
+    font-weight: 600;
     color: #3f3a64;
-    font-size: 35px;
+    // font-size: 35px;
 
     .green-color {
         color: #20ad96;
     }
 
     .weight {
-        font-weight: 200;
+        font-weight: 400;
     }
 }
 
@@ -194,7 +195,7 @@ div.center {
 
         p {
             color: #696969;
-            font-weight: 300;
+            font-weight: 400;
             font-size: 18px;
             
         }

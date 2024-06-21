@@ -12,13 +12,13 @@ export default {
     <article class="bg-color">
         <section class="my-container get-started text-center">
             <div class="elements-wrapper">
-                <h2>
+                <h4>
                     Start today for getting <span>Online Certification</span>
-                </h2>
+                </h4>
         
-                <h1>
+                <h2>
                     You can be your own guiding star with our help!
-                </h1>
+                </h2>
                 <button class="get-started-button">
                     Get started now
                 </button>
@@ -52,19 +52,19 @@ section {
         position: relative;
         z-index: 2;
 
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
+        h4 {
+            // font-size: 1.5rem;
+            font-weight: 600;
     
             span {
-                font-weight: 200;
+                font-weight: 400;
                 color: #20AD96;
             }
         }
     
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
+        h2 {
+            // font-size: 2rem;
+            font-weight: 600;
             margin-bottom: 2.5rem
         }
         

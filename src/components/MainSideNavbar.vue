@@ -25,6 +25,7 @@ export default {
 <style lang="scss" scoped>
 
 .sidenav {
+    padding: .4rem 0;
     height: auto;
     width: 50px;
     position: fixed;
@@ -41,18 +42,14 @@ export default {
 .sidenav a {
     padding: .4rem;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 17px;
     color: black;
     display: block;
 }
 
-a>i{
-    font-weight: 600;
-    font-size: 20px
+.sidenav a:hover {
+    background:#3f3a64;
+    color:white;
 }
-
-// .sidenav a:hover {
-    
-// }
 
 </style>
