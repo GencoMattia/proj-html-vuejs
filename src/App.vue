@@ -20,17 +20,21 @@ components: {
 
     data() {
         return {
-          activePage: store.pressedLink,
+          
         };
     },
-
+    
+    computed: {
+      activePageComponent() {
+        return store.pressedLink;
+      }
+    }
 };
 </script>
 
 <template>
   <AppHeader/>
-  <AppMain v-show="activePage === 'AppMain'"/>
-  <EventsPage v-show="activePage === 'EventsPage'"/>
+  <component :is="activePageComponent" />
   <AppFooter />
   
   <main>
