@@ -54,11 +54,15 @@ section{
     background-color: white;
 }
 
+div.my-container{
+    border-left: 2px solid #f5f1ed;
+}
+
 article{
     width: calc(100% / 4);
     padding: 5rem 2.5rem;
     text-align: center;
-    
+    border-right: 2px solid #f5f1ed;
 
         h5{
             font-weight: 600;
