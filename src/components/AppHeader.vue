@@ -468,9 +468,4 @@ div.search {
 
 }
 
-
-
-
-
-
 </style>
