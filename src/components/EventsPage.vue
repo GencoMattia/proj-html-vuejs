@@ -18,10 +18,6 @@ export default {
 
             ],
 
-            filteredEventsList: [
-
-            ],
-
             selectedType: "all",
         };
     },
