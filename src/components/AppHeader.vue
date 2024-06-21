@@ -1,5 +1,6 @@
 <script>
 import { FontAwesomeIcon } from "../js/font-awesome";
+import { store } from "../store";
 
 
 export default {
@@ -198,6 +199,13 @@ export default {
         //     image: './src/assets/images/homepages-mega-menu-image-alt.jpg',
         // },
         };
+    },
+
+    methods: {
+        getPressedLink(link) {
+            store.pressedLink = `${link.name}Page`;
+            console.log(`Hai premuto ${store.pressedLink}`);
+        }
     }
 };
 </script>
@@ -219,7 +227,7 @@ export default {
                             <section class="d-flex my-padding">
                                 <div class="links" :class="index===0 ? 'wide-panel'  : ''">
                                     <li v-for="(link, index) in linksNav[list].dropdown" :key="index">
-                                        <a href=""> 
+                                        <a @click="getPressedLink(link)" href="#"> 
                                             <span>
                                                 {{ link.name }}
                                             </span>
@@ -228,7 +236,7 @@ export default {
                                 </div>
                                 <div class="links-next" :class="index===0 ? 'small-panel' : ''">
                                     <li v-for="(link, index) in linksNav[list].dropdownNext" :key="index">
-                                        <a href="">
+                                        <a href="#">
                                             <span> 
                                                 {{ link.name }}
                                             </span> 
@@ -459,10 +467,5 @@ div.search {
     }
 
 }
-
-
-
-
-
 
 </style>
