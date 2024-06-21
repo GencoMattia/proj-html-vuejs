@@ -9,6 +9,7 @@ import MainGetStarted from './MainGetStarted.vue';
 import MainStatistics from './MainStatistics.vue';
 import MainBlogs from './MainBlogs.vue';
 import MainNewsletter from './MainNewsletter.vue';
+import MainSideNavbar from './MainSideNavbar.vue';
 
 export default {
     components: {
@@ -22,6 +23,7 @@ export default {
         MainStatistics,
         MainBlogs,
         MainNewsletter,
+        MainSideNavbar
     },
 
     data() {
@@ -43,6 +45,7 @@ export default {
     <MainStatistics />
     <MainBlogs />
     <MainNewsletter />
+    <MainSideNavbar />
 </template>
 
 <style scoped lang="scss">
