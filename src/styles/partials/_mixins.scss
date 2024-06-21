@@ -1,14 +1,8 @@
-@mixin uppercase-text {
-    text-transform: uppercase;
-}
-
-@mixin flex-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-@mixin scaling-hover {
-    transform: scale(1.1);
+@mixin button-style{
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color: #20Ad96;
+    border-radius: 5px;
 }
