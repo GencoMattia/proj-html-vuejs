@@ -84,7 +84,7 @@ export default {
     <section class="introduction d-flex justify-content-center">
         <div class="title">
             <h6 class="center color-grey">
-                GREAT WORDS ABOUT MAXCOACH
+                great words about maxcoach
             </h6>
             <h1>
                 Our <span class="color-green weight">top leaners'</span> verbatim
@@ -152,7 +152,10 @@ export default {
 
     
 
+    
+
     .color-grey {
+        @include uppercase-text();
         color: #8d8aa3;
         font-weight: 300;
     }
