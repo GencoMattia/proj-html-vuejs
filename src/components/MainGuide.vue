@@ -23,7 +23,9 @@ export default {
                             <img src="../assets/img/home-2-popup-video-poster.jpg" alt="">
                         </div>
                         <div class="my_bg-move">
-                            <div class="top-image"></div>
+                            <a href="https://www.youtube.com/watch?v=ElFJ1qcl74U">
+                                <div class="top-image"></div>
+                            </a>
                             <div class="square bg-img"></div>
                             <div class="round-points bg-img"></div>
                             <div class="round bg-img"></div>
