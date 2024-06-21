@@ -90,7 +90,7 @@ export default {
 @use '../styles/partials/mixins.scss' as *;
     
 section{
-    padding: 0 5rem;
+    padding: 5rem 0;
     background-color: #f5f1ed;
 }
 
