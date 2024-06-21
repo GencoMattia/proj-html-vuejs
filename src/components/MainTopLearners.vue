@@ -81,6 +81,16 @@ export default {
 </script>
 
 <template>
+    <section class="introduction d-flex justify-content-center">
+        <div class="title">
+            <h6 class="center color-grey">
+                GREAT WORDS ABOUT MAXCOACH
+            </h6>
+            <h1>
+                Our <span class="color-green weight">top leaners'</span> verbatim
+            </h1>
+        </div>
+    </section>
     <section class="testimonials row overflow-hidden align-items-stretch justify-content-evenly">
         <article v-for="(card, index) in visibleCards" :key="index" @click="activeArticle = learnersList.indexOf(card)"
         class="testimonal-card col-3 p-5 d-flex flex-column justify-content-between"
@@ -122,6 +132,35 @@ export default {
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
 
+            // sezione titolo
+    .introduction {
+        padding: 3rem 0;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    h1 {
+        color: #3f3a64;
+
+        .color-green {
+            color: #20ad96;
+
+        }
+    }
+
+    
+
+    .color-grey {
+        color: #8d8aa3;
+        font-weight: 300;
+    }
+
+    .weight {
+        font-weight: 200;
+    }
+            // fine sezione titolo
     section {
         background-color: #f8f8f8;
         width: 100%;
@@ -130,6 +169,7 @@ export default {
     article {
         background-color: white;
         margin-bottom: 7rem;
+        border-radius: 5px;
     }
 
     .side-active {
