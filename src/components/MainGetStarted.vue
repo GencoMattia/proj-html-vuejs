@@ -63,6 +63,12 @@ section {
         button {
             @include button-style;
             padding: .9rem 4.5rem;
+
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: #3f3a64;
+            }
         }
     }
     
@@ -84,6 +90,15 @@ section {
             position: absolute;
             right: 10px;
             top: 20px;
+        }
+
+        .circle-shape {
+            position: absolute;
+            left: 40px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 7px solid #E6DCD2;
         }
     }
 }
