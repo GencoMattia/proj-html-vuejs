@@ -62,6 +62,10 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
+.bg-color {
+    position: relative;
+}
+
 .input-element {
     width: 80%;
     
@@ -84,8 +88,8 @@ export default {
 
 .element-image-dots {
     position: absolute;
-    left: 1349px;
-    top: 2236px;
+    left: 10px;
+    top: 20px;
 }
 
 .element-image-circle {
@@ -153,9 +157,9 @@ h2 {
 
 label {
     position: absolute;
-    left: 681px;
+    left: 10px;
     font-weight: 200;
-    top: 2364px;
+    top: 20px;
     color: #9e9e9e;
 }
 
