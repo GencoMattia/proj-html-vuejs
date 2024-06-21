@@ -261,8 +261,12 @@ export default {
         // navbar
 article {
     box-shadow: 5px 2px 5px #b9b9b9;
-    position: fixed;
-    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: white;
 
 
     .h-container {
@@ -390,9 +394,7 @@ div.dropdown > a {
     padding-top: 29px;
     padding-bottom: 29px;
     padding-left: 18px;
-    padding-right: 18px;
-     
-    
+    padding-right: 18px;    
 }
 
                 // Input
