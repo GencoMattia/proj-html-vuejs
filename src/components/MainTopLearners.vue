@@ -107,11 +107,11 @@ export default {
                 <div class="testimonial-picture me-4">
                     <img :src="getImagePath(card.avatar)" :alt="`{{ card.name }}-img`">
                 </div>
-                <div class="testimonial-info">
+                <div class="testimonial-info d-flex flex-column justify-content-between">
                     <p class="testimonial-name">
                         {{ card.name }}
                     </p>
-                    <p class="testimonial-occupation">
+                    <p class="testimonial-occupation m-0">
                         / {{ card.occupation }}
                     </p>
                 </div>
@@ -153,7 +153,9 @@ export default {
     }
 
     
-
+    section.testimonials {
+        padding-bottom: 1rem;
+    }
     
 
     .color-grey {
@@ -175,7 +177,7 @@ export default {
         background-color: white;
         margin-bottom: 7rem;
         border-radius: 5px;
-        height: 330px;
+        height: 430px;
     }
 
     .side-active {
@@ -184,9 +186,13 @@ export default {
     
     .carosel-circles {
         color: #b7b5c4;
+        font-size: .5rem;
+
+        transition: transform 0.3s ease;
 
         .active-circle {
             color: #3f3a64;
+            transform: scale(1.5);
         }
     }
 
