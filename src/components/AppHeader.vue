@@ -1,5 +1,6 @@
 <script>
 import { FontAwesomeIcon } from "../js/font-awesome";
+import { store } from "../store";
 
 
 export default {
@@ -204,8 +205,8 @@ export default {
 
     methods: {
         getPressedLink(link) {
-            this.pressedLink = link.name;
-            console.log(`Hai premuto ${this.pressedLink}`);
+            store.pressedLink = `${link.name}Page`;
+            console.log(`Hai premuto ${store.pressedLink}`);
         }
     }
 };
