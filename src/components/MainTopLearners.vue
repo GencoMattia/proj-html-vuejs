@@ -173,6 +173,7 @@ export default {
         background-color: white;
         margin-bottom: 7rem;
         border-radius: 5px;
+        height: 330px;
     }
 
     .side-active {
