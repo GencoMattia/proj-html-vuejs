@@ -87,7 +87,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/partials/mixins.scss';
+@use '../styles/partials/mixins.scss' as *;
     
 section{
     padding: 0 5rem;
@@ -95,7 +95,7 @@ section{
 }
 
 div>p:first-child{
-    // @include uppercase-text();
+    @include uppercase-text();
     color: #8c89a2;
 }
 
