@@ -1,7 +1,10 @@
 <script>
-import AppHeader from "./components/AppHeader.vue"
-import AppMain from "./components/AppMain.vue"
-import AppFooter from "./components/AppFooter.vue"
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import AppFooter from "./components/AppFooter.vue";
+import "@fontsource/montserrat";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/400-italic.css";
 
 export default {
 components: {
@@ -31,5 +34,4 @@ components: {
 <style lang="scss">
   @use "../node_modules/bootstrap/scss/bootstrap.scss";
   @use "./styles/general.scss";
-
 </style>
