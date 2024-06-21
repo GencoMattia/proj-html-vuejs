@@ -40,9 +40,9 @@ export default {
 </script>
 
 <template>
-    <section>
-        <div>
-            <div id="most-viewed">
+    <section class="my-container">
+        <div class="d-flex justify-content-between">
+            <div id="most-viewed" class="p-4">
                 <p>enjoyable insights</p>
                 <h2>
                     Most Viewed <span>Best Blog</span>
@@ -53,21 +53,23 @@ export default {
                     </li>
                 </ul>
             </div>
-            <div>
-                <div v-for="blog in blogs" class="card" style="width: 18rem;">
+            <div id="card-section" class="d-flex">
+                <div v-for="blog in blogs" class="card">
                     <img class="card-img-top" :src="blog.img" alt="image">
                     <div class="card-body">
                         <p>
                             {{ blog.author }}
                         </p>
-                        <h3>
+                        <h5>
                             {{ blog.title }}
-                        </h3>
-                        <span>
-                            {{ blog.date }}
+                        </h5>
+                        <span class="date">
+                            <span><font-awesome-icon icon="fa-regular fa-calendar" /></span>
+                            <span>{{ blog.date }}</span>
                         </span>
-                        <span>
-                            {{ blog.views }}
+                        <span class="views">
+                            <span><font-awesome-icon icon="fa-regular fa-eye" /></span>
+                            <span>{{ blog.views }}</span>
                         </span>
                     </div>
                 </div>
@@ -78,5 +80,56 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/mixins.scss';
+    
+section{
+    padding: 5rem 1rem;
+}
+
+div>p:first-child{
+    // @include uppercase-text();
+    color: #8c89a2;
+}
+
+div#most-wiewed{
+    width: 40%;
+}
+
+h2{
+    font-weight: 600;
+    margin-bottom: 2rem;
+
+        span{
+            font-weight: 400;
+            color: #20ad96;
+        }
+}
+
+ul>li{
+    list-style-type: none;
+    font-weight: 600;
+    margin-bottom: 1rem
+
+}
+
+div#card-section{
+    width: 60%;
+}
+
+div.card{
+    max-width: 300px;
+    margin-left: 3rem;
+}
+
+h5{
+    font-weight: 600;
+}
+
+span.date>span,
+span.views>span{
+    font-size: 14px;
+    margin-right: 1rem;
+    color: #8c89a2;
+}
 
 </style>
