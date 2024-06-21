@@ -76,7 +76,7 @@ h2{
 
         span{
             color: #20ad96;
-            font-weight: 200;
+            font-weight: 400;
         }
 }
 
