@@ -194,8 +194,6 @@ export default {
             },
         ],
         list: 0,
-
-        pressedLink: "",
         
         // imageHomePage: {
         //     image: './src/assets/images/homepages-mega-menu-image-alt.jpg',
