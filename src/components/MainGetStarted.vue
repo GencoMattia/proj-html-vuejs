@@ -24,5 +24,10 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../styles/partials/mixins" as *;
+
+button {
+    @include button-style;
+}
 
 </style>
