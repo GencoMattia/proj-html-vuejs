@@ -10,24 +10,26 @@ export default {
 
 <template>
     <section class="bg-color">
-        <div class="element-image-circle">
-            <div class="translate">
-                <div class="elementor-image">
-                    <img  class="" src="../assets/images/maxcoach-shape-02.png" alt="">
+        <div class="my-container bg-img-container">
+            <div class="element-image-circle">
+                <div class="translate">
+                    <div class="elementor-image">
+                        <img  class="" src="../assets/images/maxcoach-shape-02.png" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="element-image-dots">
-            <div class="translate">
-                <div class="elementor-image">
-                    <img  class="" src="../assets/images/maxcoach-shape-09.png" alt="">
+            <div class="element-image-dots">
+                <div class="translate">
+                    <div class="elementor-image">
+                        <img  class="" src="../assets/images/maxcoach-shape-09.png" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="element-circle">
-            <div class="translate">
-                <div class="elementor-shape">
-                    <div class="shape"></div>
+            <div class="element-circle">
+                <div class="translate">
+                    <div class="elementor-shape">
+                        <div class="shape"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,6 +64,44 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
+.bg-img-container {
+    position: relative;
+
+    .element-image-circle {
+        position: absolute;
+        left: 1424px;
+        top: 138px;
+        z-index: 1;
+
+        .translate {
+            --translateX: -16.71875px;
+            --translateY: -38.33063209076175px;
+            transform: translateX(var(--translateX))translateY(var(--translateY));
+            transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-box-shadow .3s;
+        }
+    }
+
+    .element-image-dots {
+        position: absolute;
+        left: 1349px;
+        top: 122px;
+    }
+
+    .element-circle {
+        position: absolute;
+        left: 283px;
+        top: 122px;
+
+        .shape {
+            height: 56px;
+            width: 56px;
+        color: #8FD6CA;
+        border-radius: 50%;
+        border: 7px solid #8FD6CA;
+        }
+    }
+}
+
 .bg-color {
     position: relative;
 }
@@ -70,40 +110,6 @@ export default {
     width: 80%;
     
 
-}
-
-.element-circle {
-    position: absolute;
-    left: 283px;
-    top: 122px;
-
-    .shape {
-        height: 56px;
-        width: 56px;
-    color: #8FD6CA;
-    border-radius: 50%;
-    border: 7px solid #8FD6CA;
-    }
-}
-
-.element-image-dots {
-    position: absolute;
-    left: 1349px;
-    top: 122px;
-}
-
-.element-image-circle {
-    position: absolute;
-    left: 1424px;
-    top: 138px;
-    z-index: 1;
-
-    .translate {
-        --translateX: -16.71875px;
-        --translateY: -38.33063209076175px;
-        transform: translateX(var(--translateX))translateY(var(--translateY));
-        transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-box-shadow .3s;
-    }
 }
 
 .input-item {
@@ -187,9 +193,6 @@ div.center {
             
         }
     }
-        
-    
-    
 }
 
 </style>
