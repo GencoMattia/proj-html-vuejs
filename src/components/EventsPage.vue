@@ -77,7 +77,7 @@ export default {
             <section class="main_events"> 
                 <div class="page-path">
                     <p class="m-0">
-                        <a href="#" @click="getPressedLink('Home')">home</a>  /  event
+                        <a href="#" @click="getPressedLink('AppMain')">home</a>  /  event
                     </p>
                 </div>
                 <div class="page-title text-center">
