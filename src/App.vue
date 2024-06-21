@@ -34,8 +34,4 @@ components: {
 <style lang="scss">
   @use "../node_modules/bootstrap/scss/bootstrap.scss";
   @use "./styles/general.scss";
-
-  body {
-    font-family: "Montserrat";
-  }
 </style>
