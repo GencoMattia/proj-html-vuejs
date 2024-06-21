@@ -86,9 +86,9 @@ export default {
             <h6 class="center color-grey">
                 great words about maxcoach
             </h6>
-            <h1>
+            <h2>
                 Our <span class="color-green weight">top leaners'</span> verbatim
-            </h1>
+            </h2>
         </div>
     </section>
     <section class="testimonials row overflow-hidden align-items-stretch justify-content-evenly">
@@ -141,11 +141,13 @@ export default {
         text-align: center;
     }
 
-    h1 {
+    h2 {
         color: #3f3a64;
+        font-weight: 600;
 
         .color-green {
             color: #20ad96;
+            font-weight: 400
 
         }
     }

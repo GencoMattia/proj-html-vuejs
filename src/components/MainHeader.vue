@@ -17,9 +17,9 @@ export default {
         <div class="container">
             <section class="row">
                 <article class="col-5 d-flex flex-column justify-content-center pe-5 my_cl-blue">
-                    <h2 class="fs-1 fw-bold">
+                    <h1>
                         Distant learning for further expansion
-                    </h2>
+                    </h1>
                     <p>
                         Learning is a life-long journey that in fact we never find the terminate stop. Stop searching, enjoy the process.
                     </p>
@@ -53,6 +53,11 @@ export default {
     section{
         padding: 4rem 0;
     }
+
+    h1{
+        font-weight: 700;
+    }
+
     img{
         border-radius: 50%;
         position: relative;
