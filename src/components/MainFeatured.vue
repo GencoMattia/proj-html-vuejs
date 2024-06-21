@@ -96,7 +96,7 @@ export default {
                 </div>
             </div>
             <div class="d-flex justify-content-center p-2">
-                <button class="px-5 py-2 rounded-1">View all courses &rightarrow;</button>
+                <button class="px-5 py-2">View all courses &rightarrow;</button>
             </div>
         </div>
     </section>
@@ -164,6 +164,7 @@ button{
     border: none;
     color: white;
     background-color: #20Ad96;
+    border-radius: 5px;
 }
 
 </style>
