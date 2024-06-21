@@ -206,9 +206,12 @@ export default {
     <article>
         <section class="my-container d-flex justify-content-around h-container
         align-items-center">
+        <div class="col-3">
             <div class="logo">
                 <a href=""> <img src="../assets/images/dark-logo.png" alt=""></a>
             </div>
+        </div>
+        <div class="col-6 d-flex">
             <div class="li-links" v-for="(link,index) in linksNav" :key="index" @click="list=(index)">
                 <div class="dropdown">
                     <a class="dropdown-toggle border-green " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -242,6 +245,8 @@ export default {
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="col-3">
             <div class="search">
                 <a href=""><font-awesome-icon icon="fa-regular fa-user" /></a>
                 <input class="search-bar color-search" type="search" placeholder="    Search...">
@@ -249,6 +254,7 @@ export default {
                     <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
                 </button>
             </div>
+        </div>
         </section>
     </article>
 </template>
