@@ -193,11 +193,20 @@ export default {
             },
         ],
         list: 0,
+
+        pressedLink: "",
         
         // imageHomePage: {
         //     image: './src/assets/images/homepages-mega-menu-image-alt.jpg',
         // },
         };
+    },
+
+    methods: {
+        getPressedLink(link) {
+            this.pressedLink = link.name;
+            console.log(`Hai premuto ${this.pressedLink}`);
+        }
     }
 };
 </script>
@@ -219,7 +228,7 @@ export default {
                             <section class="d-flex my-padding">
                                 <div class="links" :class="index===0 ? 'wide-panel'  : ''">
                                     <li v-for="(link, index) in linksNav[list].dropdown" :key="index">
-                                        <a href=""> 
+                                        <a @click="getPressedLink(link)" href="#"> 
                                             <span>
                                                 {{ link.name }}
                                             </span>
@@ -228,7 +237,7 @@ export default {
                                 </div>
                                 <div class="links-next" :class="index===0 ? 'small-panel' : ''">
                                     <li v-for="(link, index) in linksNav[list].dropdownNext" :key="index">
-                                        <a href="">
+                                        <a href="#">
                                             <span> 
                                                 {{ link.name }}
                                             </span> 
