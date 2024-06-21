@@ -34,6 +34,7 @@ export default {
 section {
     position: relative;
     color: #3f3a64;
+    padding: 3rem 0;
 
     .elements-wrapper {
         position: relative;
