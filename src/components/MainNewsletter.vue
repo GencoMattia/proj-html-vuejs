@@ -74,8 +74,8 @@ export default {
 
 .element-circle {
     position: absolute;
-    left: 299px;
-    top: 2223px;
+    left: 283px;
+    top: 122px;
 
     .shape {
         height: 56px;
@@ -88,14 +88,14 @@ export default {
 
 .element-image-dots {
     position: absolute;
-    left: 10px;
-    top: 20px;
+    left: 1349px;
+    top: 122px;
 }
 
 .element-image-circle {
     position: absolute;
-    left: 1421px;
-    top: 2229px;
+    left: 1424px;
+    top: 138px;
     z-index: 1;
 
     .translate {
