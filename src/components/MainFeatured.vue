@@ -160,6 +160,12 @@ div.study>span{
 
 button{
     @include button-style();
+
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: #3f3a64;
+    }
 }
 
 </style>
