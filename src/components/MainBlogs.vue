@@ -1,11 +1,13 @@
 <script>
+import BlogCard from './BlogCard.vue';
 import { FontAwesomeIcon } from '../js/font-awesome';
 import img1 from '../assets/img/artist-blog-03-480x352.jpeg';
 import img2 from '../assets/img/artist-blog-01-480x352.jpg';
 
 export default {
     components:{
-        FontAwesomeIcon
+        FontAwesomeIcon,
+        BlogCard
     },
     data() {
         return {
@@ -55,32 +57,18 @@ export default {
                     </h2>
                     <ul>
                         <li v-for="viewed in mostViewed">
-                            <span><font-awesome-icon icon="fa-solid fa-right-long" /></span>{{ viewed.title }}
+                            <div class="arrow-container">
+                                <font-awesome-icon class="arrow" icon="fa-solid fa-right-long" id="arrow1" />
+                                <font-awesome-icon class="arrow" icon="fa-solid fa-right-long" id="arrow2" />
+                            </div>
+                            <p class="m-0">
+                                {{ viewed.title }}
+                            </p>
                         </li>
                     </ul>
                 </div>
                 <div id="card-section" class="d-flex">
-                    <div v-for="blog in blogs" class="card">
-                        <div class="image-container">
-                            <img class="card-img-top" :src="blog.img" alt="image">
-                        </div>
-                        <div class="card-body py-4">
-                            <p>
-                                {{ blog.author }}
-                            </p>
-                            <h5>
-                                {{ blog.title }}
-                            </h5>
-                            <span class="date">
-                                <span><font-awesome-icon icon="fa-regular fa-calendar" /></span>
-                                <span>{{ blog.date }}</span>
-                            </span>
-                            <span class="views">
-                                <span><font-awesome-icon icon="fa-regular fa-eye" /></span>
-                                <span>{{ blog.views }}</span>
-                            </span>
-                        </div>
-                    </div>
+                    <BlogCard v-for="blog in blogs" :blog="blog"/>
                 </div>
             </div>
         </div>
@@ -128,45 +116,50 @@ ul{
             list-style-type: none;
             font-weight: 600;
             margin-bottom: 1rem;
+            display: flex;
+            align-content: center;
+            align-items: center;
+
+                &:hover{
+                    color: #20ad96;
+                }
         }
+}
+
+.arrow-container {
+    width: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: .5rem;
+}
+
+.arrow{
+    margin-right: .25rem;
+}
+
+li:hover .arrow {
+    animation: scrollArrow .25s linear; 
+}
+
+@keyframes scrollArrow {
+    0% {
+        transform: translateX(0%);
+        color: black;
+    }
+    100% {
+        transform: translateX(100%);
+        color: #20ad96;
+    }
+}
+
+#arrow2 {
+    animation-delay: 0s;
+    color: #20ad96;
 }
 
 div#card-section{
     width: 60%;
-}
-
-div.card{
-    max-width: 300px;
-    margin-left: 3rem;
-}
-
-div.image-container{
-    overflow: hidden;
-
-        img{
-            transition: transform 0.6s ease;
-
-            &:hover{
-                @include scaling-hover;
-            }
-        }
-}
-
-h5{
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-span.date,
-span.views{
-    margin-right: 1.3rem;
-}
-
-span.date>span,
-span.views>span{
-    font-size: 14px;
-    margin-right: .5rem;
-    color: #8c89a2;
 }
 
 </style>

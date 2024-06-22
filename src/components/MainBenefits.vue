@@ -1,8 +1,13 @@
 <script>
+import { FontAwesomeIcon } from '../js/font-awesome';
 import img1 from '../assets/img/home-2-image-box-01.png';
-import img2 from '../assets/img/about-us-02-image-box-02.png'
-import img3 from '../assets/img/home-2-image-box-03.png'
+import img2 from '../assets/img/about-us-02-image-box-02.png';
+import img3 from '../assets/img/home-2-image-box-03.png';
+
 export default {
+    components:{
+        FontAwesomeIcon
+    },
     data() {
         return {
             benefits: [{
@@ -50,7 +55,7 @@ export default {
                             {{ benefit.paragraph }}
                         </p>
                         <a href="#">
-                            <span class="me-1">{{ benefit.link }}</span><span class="arrow">&rightarrow;</span>
+                            <span class="me-1">{{ benefit.link }}</span><span class="arrow"><font-awesome-icon icon="fa-solid fa-arrow-right" /></span>
                         </a>
                     </div>
                 </article>
@@ -107,7 +112,7 @@ a{
     position: relative;
 
         span.arrow{
-            font-size: 20px;
+            font-size: 14px;
         }
 }
 
