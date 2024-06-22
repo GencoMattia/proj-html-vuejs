@@ -1,4 +1,5 @@
 <script>
+import FeaturedArticle from './FeaturedArticle.vue';
 import { FontAwesomeIcon } from '../js/font-awesome';
 import img1 from '../assets/images/course-02-480x298.jpg';
 import img2 from '../assets/images/stock-full-hd-03-480x298.jpg';
@@ -9,7 +10,8 @@ import img6 from '../assets/images/stock-full-hd-05-480x298.jpg';
 
 export default {
     components:{
-        FontAwesomeIcon
+        FontAwesomeIcon,
+        FeaturedArticle
     },
     data() {
         return {
@@ -69,34 +71,11 @@ export default {
             </div>
             <div>
                 <div class="d-flex flex-wrap justify-content-between">
-                    <article class="d-flex mb-3 rounded-1" v-for="course in onlineCourses">
-                        <img class="rounded-circle object-fit-cover me-4" :src="course.img" alt="">
-                        <div class="align-content-center">
-                            <p v-if="course.price === 'Free'">
-                                {{ course.price }} 
-                            </p>
-                            <p v-else>
-                                {{ course.price }}<span class="decimal">.00</span>
-                            </p>
-                            <h5>
-                                {{ course.title }}
-                            </h5>
-                            <div class="study">
-                                <span>
-                                    <span class="me-2"><font-awesome-icon icon="fa-regular fa-file-lines"/></span>
-                                    <span>{{ course.lessons }}</span>
-                                </span>
-                                <span>
-                                    <span class="me-2"><font-awesome-icon icon="fa-regular fa-user" /></span>
-                                    <span>{{ course.students }}</span>
-                                </span>
-                            </div>
-                        </div>
-                    </article>
+                    <FeaturedArticle v-for="course in onlineCourses" :course="course"/>
                 </div>
             </div>
             <div class="d-flex justify-content-center p-2">
-                <button class="px-5 py-2">View all courses &rightarrow;</button>
+                <button class="px-5 py-2">View all courses <font-awesome-icon icon="fa-solid fa-arrow-right" /></button>
             </div>
         </div>
     </section>
@@ -117,45 +96,6 @@ div.text-center>p{
 
 h2{
     font-weight: 600;
-}
-
-article{
-    width: 550px;
-    padding: 1.5rem;
-
-        div>p{
-            font-size: 25px;
-            color: #20Ad96;
-            font-weight: bold;
-
-                span.decimal{
-                    font-size: 20px;
-                }
-        }
-}
-
-article:hover{
-    background-color: white;
-}
-
-img{
-    width: 150px;
-    height: 150px;
-}
-
-h5{
-    font-weight: 600;
-}
-
-h5:hover{
-    color: #20Ad96;
-    cursor: pointer;
-}
-
-div.study>span{
-    font-size: 14px;
-    margin-right: 2rem;
-    color: #8c89a2;
 }
 
 button{
