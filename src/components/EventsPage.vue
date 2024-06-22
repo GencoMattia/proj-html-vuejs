@@ -8,7 +8,7 @@ import { store } from "../store";
 export default {
     components: {
         FontAwesomeIcon,
-        EventCards,
+        EventCard,
     },
     
     data() {
@@ -103,7 +103,7 @@ export default {
                     </div>
                 </div>
                 <div class="events-cards-wrapper">
-                    
+                    <EventCards  v-for="(event, index) in filteredEventsList" :key="index" :event="event"/>
                 </div>
             </section>
         </div>

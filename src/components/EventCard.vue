@@ -4,12 +4,19 @@ export default {
         return {
         
         };
+    },
+
+    props: {
+        event: {
+            type: Object,
+            required: true,
+        }
     }
 };
 </script>
 
 <template>
-    <div class="card border-0" style="width: 18rem;" v-for="(event, index) in filteredEventsList" :key="index">
+    <div class="card border-0" style="width: 18rem;">
         <div class="image-container">
             <img :src="event.image" class="card-img-top" alt="...">
             <div class="overlay">
