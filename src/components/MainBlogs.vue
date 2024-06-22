@@ -57,7 +57,13 @@ export default {
                     </h2>
                     <ul>
                         <li v-for="viewed in mostViewed">
-                            <span><font-awesome-icon icon="fa-solid fa-right-long" /></span>{{ viewed.title }}
+                            <div class="arrow-container">
+                                <font-awesome-icon class="arrow" icon="fa-solid fa-right-long" id="arrow1" />
+                                <font-awesome-icon class="arrow" icon="fa-solid fa-right-long" id="arrow2" />
+                            </div>
+                            <p class="m-0">
+                                {{ viewed.title }}
+                            </p>
                         </li>
                     </ul>
                 </div>
@@ -110,13 +116,50 @@ ul{
             list-style-type: none;
             font-weight: 600;
             margin-bottom: 1rem;
+            display: flex;
+            align-content: center;
+            align-items: center;
+
+                &:hover{
+                    color: #20ad96;
+                }
         }
+}
+
+.arrow-container {
+    width: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: .5rem;
+}
+
+.arrow{
+    margin-right: .25rem;
+}
+
+li:hover .arrow {
+    animation: scrollArrow .25s linear; 
+}
+
+@keyframes scrollArrow {
+    0% {
+        transform: translateX(0%);
+        color: black;
+    }
+    100% {
+        transform: translateX(100%);
+        color: #20ad96;
+    }
+}
+
+#arrow2 {
+    animation-delay: 0s;
+    color: #20ad96;
 }
 
 div#card-section{
     width: 60%;
 }
-
-
 
 </style>
