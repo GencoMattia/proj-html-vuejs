@@ -147,7 +147,6 @@ export default {
             }
         }
     }
-    
 
     .events-cards-wrapper {
         display: flex;
